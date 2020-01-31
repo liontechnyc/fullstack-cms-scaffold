@@ -3,6 +3,8 @@ version: '3'
 services: 
   frontend:
     command: ["yarn", "develop", "-H", "0.0.0.0" ]
+    volumes: 
+      - "./frontend:/app"
     ports:
       - "8000:8000"
       - "9929:9929"
