@@ -1,0 +1,22 @@
+{
+    "name": "lts-cms-stack",
+    "private": true,
+    "description": "An application stack for rapidly deploying fullstack CMS solutions",
+    "version": "0.1.0",
+    "author": "Ezra Singh <ezra@liontech.nyc>",
+    "dependencies": {
+    },
+    "license": "MIT",
+    "scripts": {
+        "docker:dev": "docker-compose -f docker-compose.yml -f docker-compose.dev.yml up",
+        "docker:prod": "docker-compose -f docker-compose.yml -f docker-compose.prod.yml up",
+        "docker:down": "docker-compose down"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://gitlab.com/liontechnyc/inergy/cms-stack"
+    },
+    "bugs": {
+        "url": "https://gitlab.com/liontechnyc/inergy/cms-stack"
+    }
+}

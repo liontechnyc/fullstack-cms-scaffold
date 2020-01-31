@@ -1,0 +1,10 @@
+version: '3'
+
+services: 
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    environment:
+      GATSBY_WEBPACK_PUBLICPATH: /
+      STRAPI_URI: backend:1337

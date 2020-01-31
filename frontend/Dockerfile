@@ -11,7 +11,6 @@ RUN \
 RUN npm install -g gatsby-cli yarn
 
 WORKDIR /app
-COPY ./package.json .
+COPY ./package*.json .
 RUN yarn install && yarn cache clean
 COPY . .
-CMD ["yarn", "develop", "-H", "0.0.0.0" ]
