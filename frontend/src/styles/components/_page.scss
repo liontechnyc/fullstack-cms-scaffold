@@ -1,0 +1,59 @@
+// ? Page style components
+// TODO - 
+.page{
+    /** 
+     * ? Structures content with respect to the viewport
+    */
+    &__layout{
+        display: flex;
+        width: 100vw;
+        min-height: 100vh;
+        /* // ? These modifiers can be used to position the page navigation */
+        &.is-vertical{ flex-direction: column; }
+        &.is-horizontal{ flex-direction: row; }
+    }
+    /**
+     * ? Structures content with respect to the webpage
+    */
+    &__container{
+        display: flex;
+        flex: 1 0;
+        width: 100vw;
+        flex-direction: column;
+    }
+    /**
+     * ? Structures content within page container 
+    */
+    &__content{
+        &--container{
+            display: flex;
+            flex: 1 0;
+            /* // ? Positions the content blocks direction */
+            &.is-vertical{ flex-direction: column; }
+            &.is-horizontal{ flex-direction: row; }
+            /* //  ? Controls scale of horizontal padding for the content container */
+            &.is-fluid{ padding: 0 0; }
+            &.is-wide{ padding: 0 4em; }
+            &.is-narrow{ padding: 0 8em; }
+        }
+        &--block{
+            flex: 1 0;
+        }
+    }
+    /**
+     * ? Structures navigation content within page layout
+    */
+    &__navigation{
+        &--container{
+
+        }
+    }
+    /**
+     * ? Structures footer content within page layout
+    */
+    &__footer{
+        position: relative;
+        flex: 0 1;
+        padding: 4em;
+    }
+}
