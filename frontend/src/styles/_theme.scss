@@ -1,0 +1,56 @@
+$fontFamily: 'Roboto', sans-serif;
+$fontColor: #073642;
+$activeLinkColor: #3273dc;
+
+
+$palettes: (
+    'primary': (
+        'base': #525aff,
+        'dark': #2a34d1
+    ),
+    'secondary': (
+        'base': #fd78a5,
+        'light': #d79cd2
+    ),
+    'accent': (
+        'base': #fcdbd6,
+        'light': #fee6dd,
+        'dark': #ded2ef
+    ),
+    'background': (
+        'base': #2a34d1
+    ),
+    'mono': (
+        'white': #fff,
+        'lighter': #eee,
+        'light': #ccc,
+        'dark': #333,
+        'darker': #111,
+        'black': #000
+    )
+);
+
+/** Palette Interface */
+
+@function palette($swatch-key, $color-key: 'base') {
+    $swatch: map-get($palettes, $swatch-key);
+    @return map-get($swatch, $color-key);
+}
+
+@function palette-darken($swatch-key, $color-key: 'base', $intensity: 0) {
+    $swatch: map-get($palettes, $swatch-key);
+    $color: map-get($swatch, $color-key);
+    @return darken($color, $intensity);
+}
+
+@function palette-lighten($swatch-key, $color-key: 'base', $intensity: 0) {
+    $swatch: map-get($palettes, $swatch-key);
+    $color: map-get($swatch, $color-key);
+    @return lighten($color, $intensity);
+}
+
+@function palette-alpha($swatch-key, $color-key: 'base', $alpha: 1.0) {
+    $swatch: map-get($palettes, $swatch-key);
+    $color: map-get($swatch, $color-key);
+    @return rgba($color, $alpha);
+}

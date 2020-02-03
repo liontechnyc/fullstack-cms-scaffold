@@ -1,0 +1,130 @@
+$mobile-width: 320px;
+$tablet-width: 720px;
+$desktop-width: 1024px;
+
+@mixin mobile{
+    @media (min-width: #{$mobile-width}) and (max-width: #{$tablet-width - 1px}) {
+        @content;
+    }
+}
+
+@mixin tablet{
+    @media (min-width: #{$tablet-width}) and (max-width: #{$desktop-width - 1px}) {
+        @content;
+    }
+}
+
+@mixin desktop{
+    @media (min-width: #{$desktop-width}){
+        @content;
+    }
+}
+
+@mixin flexbox(){
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+}
+
+@mixin flex($flex-value){
+    -webkit-box-flex: $flex-value;
+    -moz-box-flex:  $flex-value;
+    -webkit-flex:  $flex-value;
+    -ms-flex:  $flex-value;
+    flex:  $flex-value;
+}
+
+@mixin justify($justify-value){
+    -webkit-justify-content: $justify-value;
+    -moz-justify-content: $justify-value;
+    justify-content: $justify-value;
+}
+
+@mixin box-pack($box-pack){
+    -webkit-box-pack: $box-pack;
+    -moz-box-pack: $box-pack;
+    -ms-flex-pack: $box-pack;
+}
+
+@mixin border-radius($bdrs){
+    -webkit-border-radius: $bdrs;
+    -moz-border-radius: $bdrs;
+    border-radius: $bdrs;
+
+}
+
+@mixin noselect{
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+@mixin overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    min-height: 100vh;
+}
+
+@mixin scrollbars($size, $foreground-color, $background-color: mix($foreground-color, white,  50%)) {
+    ::-webkit-scrollbar {
+        width:  $size;
+        height: $size;
+        }
+    ::-webkit-scrollbar-thumb {
+        background: $foreground-color;
+        }
+    ::-webkit-scrollbar-track {
+        background: $background-color;
+    }
+
+// For IE
+    body {
+        scrollbar-face-color: $foreground-color;
+        scrollbar-track-color: $background-color;
+    }
+}
+
+@mixin boxshadow($dp) {
+    @if $dp==0 {
+        box-shadow: none;
+    }
+    @else if $dp==1 {
+        box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .14), 0 2px 1px -1px rgba(0, 0, 0, .12), 0 1px 3px 0 rgba(0, 0, 0, .20);
+    }
+    @else if $dp==2 {
+        box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .12), 0 1px 5px 0 rgba(0, 0, 0, .20);
+    }
+    @else if $dp==3 {
+        box-shadow: 0 3px 4px 0 rgba(0, 0, 0, .14), 0 3px 3px -2px rgba(0, 0, 0, .12), 0 1px 8px 0 rgba(0, 0, 0, .20);
+    }
+    @else if $dp==4 {
+        box-shadow: 0 4px 5px 0 rgba(0, 0, 0, .14), 0 1px 10px 0 rgba(0, 0, 0, .12), 0 2px 4px -1px rgba(0, 0, 0, .20);
+    }
+    @else if $dp==6 {
+        box-shadow: 0 6px 10px 0 rgba(0, 0, 0, .14), 0 1px 18px 0 rgba(0, 0, 0, .12), 0 3px 5px -1px rgba(0, 0, 0, .20);
+    }
+    @else if $dp==8 {
+        box-shadow: 0 8px 10px 1px rgba(0, 0, 0, .14), 0 3px 14px 2px rgba(0, 0, 0, .12), 0 5px 5px -3px rgba(0, 0, 0, .20);
+    }
+    @else if $dp==9 {
+        box-shadow: 0 9px 12px 1px rgba(0, 0, 0, .14), 0 3px 16px 2px rgba(0, 0, 0, .12), 0 5px 6px -3px rgba(0, 0, 0, .20);
+    }
+    @else if $dp==12 {
+        box-shadow: 0 12px 17px 2px rgba(0, 0, 0, .14), 0 5px 22px 4px rgba(0, 0, 0, .12), 0 7px 8px -4px rgba(0, 0, 0, .20);
+    }
+    @else if $dp==16 {
+        box-shadow: 0 16px 24px 2px rgba(0, 0, 0, .14), 0 6px 30px 5px rgba(0, 0, 0, .12), 0 8px 10px -5px rgba(0, 0, 0, .20);
+    }
+    @else if $dp==24 {
+        box-shadow: 0 24px 38px 3px rgba(0, 0, 0, .14), 0 9px 46px 8px rgba(0, 0, 0, .12), 0 11px 15px -7px rgba(0, 0, 0, .20);
+    }
+    @else {
+        @error "Invalid argument for $dp: {" + $dp + "}, look at the method definition for possible values";
+    }
+}
