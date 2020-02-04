@@ -1,7 +1,9 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
+import { ApolloProvider } from "@apollo/react-hooks"
 
+import client from "../lib/apollo/client"
 import "../styles/core.scss"
 
 /**
@@ -19,11 +21,11 @@ const Page = ({ children }) => {
   `)
 
   return (
-    <>
+    <ApolloProvider client={client}>
       <div className="page__layout is-vertical">
         <nav className="page__navigation">
           <div className="page__navigation--container">
-            {/* Nav items */}
+            {data.site.siteMetadata.title}
           </div>
         </nav>
         <div className="page__container">
@@ -38,7 +40,7 @@ const Page = ({ children }) => {
           </footer>
         </div>
       </div>
-    </>
+    </ApolloProvider>
   )
 }
 
