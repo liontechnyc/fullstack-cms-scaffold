@@ -24,8 +24,10 @@ const Page = ({ children }) => {
     <ApolloProvider client={client}>
       <div className="page__layout is-vertical">
         <nav className="page__navigation">
-          <div className="page__navigation--container">
-            {data.site.siteMetadata.title}
+          <div className="page__navigation--container align-center">
+            <div className="page__navigation--item brand">
+              {data.site.siteMetadata.title}
+            </div>
           </div>
         </nav>
         <div className="page__container">

@@ -44,8 +44,32 @@
      * ? Structures navigation content within page layout
     */
     &__navigation{
+        z-index: 100;
+        position: relative;
+        padding: 2em;
+        // !!! THESE MODIFIERS NEED TESTING
+        &.is-fixed{
+            position: fixed;
+            top: 0;
+            left: 0;
+        }
+        &.is-sticky{
+            position: sticky;
+            top: 0;
+        }
+        // !! -----------------------------
         &--container{
+            display: flex;
+            align-items: center;
+            &.align-center{
+                justify-content: center;
+            }
 
+        }
+        &--item{
+            &.brand{
+                font-weight: 900;
+            }
         }
     }
     /**
