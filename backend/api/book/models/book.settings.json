@@ -1,0 +1,19 @@
+{
+  "info": {
+    "name": "book"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "richtext"
+    }
+  },
+  "connection": "default",
+  "collectionName": "books"
+}
