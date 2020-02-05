@@ -34,8 +34,9 @@
   ],
   "license": "MIT",
   "scripts": {
-    "start": "npm run develop",
+    "start": "GATSBY_STRAPI_URI=http://localhost:8001/graphql npm run develop",
     "build": "gatsby build",
+    "build:staging": "GATSBY_STRAPI_URI=http://localhost:8081/graphql npm run build",
     "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "serve": "gatsby serve",

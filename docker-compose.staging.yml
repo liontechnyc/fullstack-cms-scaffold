@@ -6,3 +6,12 @@ services:
     tty: true
     ports:
       - "8080:80"
+    depends_on: 
+      - backend
+  backend:
+    stdin_open: true
+    tty: true
+    ports:
+      - "8081:8081"
+    environment: 
+      NODE_ENV: staging

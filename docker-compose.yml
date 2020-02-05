@@ -6,3 +6,8 @@ services:
     container_name: lts_cms_frontend
     volumes: 
       - ./frontend/public:/usr/share/nginx/html
+  backend:
+    image: strapi/strapi
+    container_name: lts_cms_backend
+    volumes: 
+      - ./backend:/srv/app

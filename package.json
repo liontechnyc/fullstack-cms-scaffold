@@ -7,9 +7,8 @@
     "dependencies": {},
     "license": "MIT",
     "scripts": {
-        "build:frontend" : "rm -rf frontend/public && npm --prefix frontend run build",
-        "staging": "npm run build:frontend && docker-compose -f docker-compose.yml -f docker-compose.staging.yml up --build",
-        "production": "docker-compose -f docker-compose.yml -f docker-compose.prod.yml up --build",
+        "build:staging" : "npm --prefix frontend run build:staging",
+        "staging": "docker-compose -f docker-compose.yml -f docker-compose.staging.yml up --build",
         "docker:down": "docker-compose down"
     },
     "repository": {

@@ -13,7 +13,6 @@ const BOOKS = gql`
 
 const Books = ({}) => {
     const { data, loading, error } = useQuery(BOOKS)
-    console.log(data)
     if(error){ return <strong>Oof: could not fetch books</strong> }
     if(loading){ return <span>Loading <i>le</i> books ;) ...</span> }
     return(
