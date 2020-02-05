@@ -1,0 +1,6 @@
+# Netlify deployment config for frontend app 
+
+[build]
+    base = "frontend/"
+    command = "npm run build:production"
+    publish = "frontend/public"
