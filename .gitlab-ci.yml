@@ -1,7 +1,7 @@
 image: node:latest
 
 variables:
-  APP_ID: app
+  APP_ID: lts-cms-base
 
 stages:
   - build
@@ -10,11 +10,9 @@ stages:
 cache:
   paths:
     - frontend/node_modules/
-    - backend/node_modules/
 
 before_script:
   - npm --prefix frontend install
-  - npm --prefix backend install
 
 build_frontend:
   stage: build
