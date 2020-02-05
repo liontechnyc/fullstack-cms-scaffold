@@ -2,9 +2,3 @@
 
 [build]
     publish = "frontend/public"
-
-[[redirects]]
-    from = "https://__APP_ID__.netlify.com"
-    to = "https://app.liontech.nyc/__APP_ID__"
-    status = 301
-    force = true

@@ -26,10 +26,11 @@ build_frontend:
 deploy_to_heroku:
   stage: deploy
   before_script:
+    - git remote add heroku https://heroku:$HEROKU_API_KEY@git.heroku.com/$APP_ID.git
     - npm install -g heroku
-    - heroku create $APP_ID --manifest
+    - heroku create $APP_ID
   script:
-    - git subtree push --prefix backend heroku master
+    - git subtree push -f --prefix backend heroku HEAD:master
 
 
 deploy_to_netlify:
