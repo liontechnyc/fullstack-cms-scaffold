@@ -40,9 +40,8 @@ deploy_to_netlify:
   before_script:
     - npm install netlify-cli -g
     - sed -i s/__APP_ID__/${APP_ID}/g netlify.toml
-    - netlify link --site $NETLIFY_SITE_ID
     # TODO: Set netlify site name to app-id
-    # - set NETLIFY_APP_DATA=$(printf '\{ "site_id" : "%s", "name" : "%s" \}' $NETLIFY_SITE_ID $APP_ID)
+    # - export NETLIFY_APP_DATA=$(printf '\{ "site_id" : "%s", "name" : "%s" \}' $NETLIFY_SITE_ID $APP_ID)
     # - netlify api updateSite --data $NETLIFY_APP_DATA
   script:
     - netlify --telemetry-disable
