@@ -1,5 +1,8 @@
 image: node:latest
 
+variables:
+  APP_ID: app
+
 stages:
   - build
   - deploy
@@ -7,9 +10,11 @@ stages:
 cache:
   paths:
     - frontend/node_modules/
+    - backend/node_modules/
 
 before_script:
   - npm --prefix frontend install
+  - npm --prefix backend install
 
 build_frontend:
   stage: build
@@ -19,12 +24,26 @@ build_frontend:
     paths:
       - frontend/public
 
+deploy_to_heroku:
+  stage: deploy
+  before_script:
+    - npm install -g heroku
+    - heroku create $APP_ID --manifest
+  script:
+    - git subtree push --prefix backend heroku master
+
+
 deploy_to_netlify:
   stage: deploy
   dependencies:
     - build_frontend
   before_script:
     - npm install netlify-cli -g
+    - sed -i s/__APP_ID__/${APP_ID}/g netlify.toml
+    - netlify link --site $NETLIFY_SITE_ID
+    # TODO: Set netlify site name to app-id
+    # - set NETLIFY_APP_DATA=$(printf '\{ "site_id" : "%s", "name" : "%s" \}' $NETLIFY_SITE_ID $APP_ID)
+    # - netlify api updateSite --data $NETLIFY_APP_DATA
   script:
     - netlify --telemetry-disable
     - netlify deploy --site $NETLIFY_SITE_ID --auth $NETLIFY_AUTH_TOKEN --prod

@@ -147,3 +147,4 @@ backend/exports
 backend/.cache
 backend/build
 backend/public
+backend/package-lock.json
