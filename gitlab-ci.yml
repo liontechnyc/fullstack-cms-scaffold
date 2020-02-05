@@ -1,0 +1,29 @@
+image: node:latest
+
+stages:
+  - build
+  - deploy
+
+cache:
+  paths:
+    - frontend/node_modules/
+
+before_script:
+  - npm --prefix frontend install
+
+build_frontend:
+  stage: build
+  script:
+    - npm run build:production
+  artifacts:
+    paths:
+      - frontend/public
+
+deploy_to_netlify:
+  stage: deploy
+  dependencies:
+    - build_frontend
+  before_script:
+    - npm install netlify-cli -g
+  script:
+    - netlify-cli deploy --site $NETLIFY_SITE_ID --auth $NETLIFY_AUTH_TOKEN --prod
