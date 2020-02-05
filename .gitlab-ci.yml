@@ -30,7 +30,7 @@ deploy_to_heroku:
     - npm install -g heroku
     - heroku create $APP_ID || echo 'App already exist, skipping app creation...'
   script:
-    - git subtree --prefix push -f backend heroku HEAD:master
+    - git subtree --prefix push backend heroku HEAD:master
 
 
 deploy_to_netlify:
