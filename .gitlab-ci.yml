@@ -1,7 +1,7 @@
 image: node:latest
 
 variables:
-  APP_ID: lts-cms-base
+  APP_ID: lts-cms-core
 
 stages:
   - build
@@ -17,6 +17,7 @@ before_script:
 build_frontend:
   stage: build
   script:
+    - sed -i s/__APP_ID__/${APP_ID}/g frontend/.env-cmdrc.json
     - npm run build:production
   artifacts:
     paths:
