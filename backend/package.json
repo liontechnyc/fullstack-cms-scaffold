@@ -2,7 +2,7 @@
   "name": "lts-cms-backend",
   "private": true,
   "version": "0.1.0",
-  "description": "A Strapi application",
+  "description": "A GraphQL enabled Strapi backend API server",
   "author": "Ezra Singh <ezra@liontech.nyc>",
   "scripts": {
     "start": "strapi develop",
@@ -12,6 +12,7 @@
   "devDependencies": {},
   "dependencies": {
     "knex": "<0.20.0",
+    "pg": "^7.18.1",
     "sqlite3": "latest",
     "strapi": "3.0.0-beta.18.7",
     "strapi-admin": "3.0.0-beta.18.7",

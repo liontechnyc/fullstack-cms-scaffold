@@ -1,5 +1,5 @@
 {
-    "name": "lts-cms-stack",
+    "name": "lts-cms-core",
     "private": true,
     "description": "An application stack for rapidly deploying fullstack CMS solutions",
     "version": "0.1.0",
