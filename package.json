@@ -6,6 +6,10 @@
     "author": "Ezra Singh <ezra@liontech.nyc>",
     "dependencies": {},
     "license": "MIT",
+    "engines": {
+        "node": ">=10.0.0",
+        "npm": ">=6.0.0"
+    },
     "scripts": {
         "develop:frontend": "npm --prefix frontend run start",
         "develop:backend": "npm --prefix backend run develop",
