@@ -34,7 +34,7 @@ deploy_to_heroku:
     - heroku addons:create heroku-postgresql:$PG_PLAN --app $APP_ID --name PG_$APP_ID --wait || echo 'DB already exist, skipping creation...'
 
   script:
-    - git subtree --prefix backend push heroku master
+    - git subtree --prefix backend push -f heroku master
 
 
 deploy_to_netlify:
