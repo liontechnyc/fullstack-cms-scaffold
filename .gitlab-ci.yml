@@ -28,10 +28,10 @@ deploy_to_heroku:
   stage: deploy
 
   before_script:
+    - git remote add heroku https://heroku:$HEROKU_API_KEY@git.heroku.com/$APP_ID.git
     - npm install -g heroku
     - heroku create $APP_ID || echo 'App already exist, skipping app creation...'
     - heroku addons:create heroku-postgresql:$PG_PLAN --app $APP_ID --name lts-pg-$APP_ID --wait || echo 'DB already exist, skipping creation...'
-    - git remote set-url --add heroku https://heroku:$HEROKU_API_KEY@git.heroku.com/$APP_ID.git
 
   script:
     - git push heroku HEAD:master
