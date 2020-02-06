@@ -5,8 +5,9 @@
   "description": "A GraphQL enabled Strapi backend API server",
   "author": "Ezra Singh <ezra@liontech.nyc>",
   "scripts": {
-    "start": "strapi develop",
+    "start": "npm run strapi",
     "build": "strapi build",
+    "develop": "strapi develop",
     "strapi": "strapi"
   },
   "devDependencies": {},
