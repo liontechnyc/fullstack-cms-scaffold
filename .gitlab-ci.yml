@@ -32,7 +32,7 @@ deploy_to_heroku:
     - npm install -g heroku
     - heroku create $APP_ID || echo 'App already exist, skipping app creation...'
     - heroku addons:create heroku-postgresql:$PG_PLAN --app $APP_ID || echo 'DB already exist, skipping creation...'
-  
+
   script:
     - git subtree --prefix backend push heroku master
 
@@ -46,7 +46,7 @@ deploy_to_netlify:
   before_script:
     - npm install netlify-cli -g
     - > 
-        netlify api getSite --data "'$(printf '{ "site_id": "%s", "site_name": "%s" }' "$NETLIFY_SITE_ID" "$APP_ID")'"
+        netlify api getSite --data "$(printf '{ "site_id": "%s", "site_name": "%s" }' "$NETLIFY_SITE_ID" "$APP_ID")"
 
   script:
     - netlify --telemetry-disable
