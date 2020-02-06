@@ -1,2 +1,4 @@
+# Netlify config for frontend
+
 [build]
     publish = "frontend/public"
