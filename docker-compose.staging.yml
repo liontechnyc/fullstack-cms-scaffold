@@ -17,6 +17,7 @@ services:
       NODE_ENV: staging
       DATABASE_HOST: pg
       DATABASE_PORT: 5432
+      DATABASE_DB: app/staging
       DATABASE_USERNAME: app:staging
       DATABASE_PASSWORD: testing
       SECRET_KEY_SIZE: 5
