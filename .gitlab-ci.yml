@@ -46,7 +46,7 @@ deploy_to_netlify:
   before_script:
     - npm install netlify-cli -g
     - > 
-        netlify api getSite --data $(printf '"{ "site_id": "%s", "site_name": "%s" }"' "$NETLIFY_SITE_ID" "$APP_ID")
+        netlify api getSite --data "'$(printf '{ "site_id": "%s", "site_name": "%s" }' "$NETLIFY_SITE_ID" "$APP_ID")'"
 
   script:
     - netlify --telemetry-disable
