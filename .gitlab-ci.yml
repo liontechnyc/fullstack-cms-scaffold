@@ -26,6 +26,9 @@ build_frontend:
 deploy_to_heroku:
   stage: deploy
 
+  only:
+    - master
+
   before_script:
     - npm install -g heroku
     - heroku create $APP_ID || echo 'App already exist, skipping app creation...'
