@@ -19,7 +19,7 @@ build_frontend:
   stage: build
   script:
     - sed -i s/__APP_ID__/${APP_ID}/g frontend/.env-cmdrc.json
-    - npm run build:production
+    - npm --prefix frontend run build
   artifacts:
     paths:
       - frontend/public
