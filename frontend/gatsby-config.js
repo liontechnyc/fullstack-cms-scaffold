@@ -1,5 +1,4 @@
 module.exports = {
-  pathPrefix: `/${process.env.APP_ID}`,
   siteMetadata: {
     title: `Inergy CMS`,
     description: `Inergy is a CMS platform, from LionTechNYC`,

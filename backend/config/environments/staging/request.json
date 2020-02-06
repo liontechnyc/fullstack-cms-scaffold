@@ -4,7 +4,10 @@
     "client": "cookie",
     "key": "strapi.sid",
     "prefix": "strapi:sess:",
-    "secretKeys": ["mySecretKey1", "mySecretKey2"],
+    "secretKeys": [
+      "${[...Array(process.env.SECRET_KEY_SIZE).map(i=>Math.random().toString(36).substring(2)).join('')]}", 
+      "${[...Array(process.env.SECRET_KEY_SIZE).map(i=>Math.random().toString(36).substring(2)).join('')]}"
+    ],
     "httpOnly": true,
     "maxAge": 86400000,
     "overwrite": true,

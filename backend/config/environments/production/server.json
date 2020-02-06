@@ -1,6 +1,6 @@
 {
-  "host": "localhost",
-  "port": "${process.env.PORT || 1337}",
+  "host": "${process.env.APP_ID}.herokuapp.com",
+  "port": "80",
   "production": true,
   "proxy": {
     "enabled": false
@@ -9,6 +9,7 @@
     "enabled": false
   },
   "admin": {
-    "autoOpen": false
+    "autoOpen": false,
+    "path": "/dashboard"
   }
 }
