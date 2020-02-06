@@ -4,6 +4,7 @@ services:
   frontend:
     stdin_open: true
     tty: true
+    restart: unless-stopped
     ports:
       - "8080:80"
     depends_on: 
@@ -11,6 +12,7 @@ services:
   backend:
     stdin_open: true
     tty: true
+    restart: unless-stopped
     ports:
       - "8081:8081"
     environment: 
@@ -27,11 +29,12 @@ services:
     image: postgres:alpine
     stdin_open: true
     tty: true
+    restart: always
     volumes: 
     - ./backend/.tmp/pg_data:/var/lib/postgresql/data/pg_data
     environment:
       POSTGRES_PASSWORD: testing
-      POSTGRES_DB: staging
+      POSTGRES_DB: app/staging
       POSTGRES_USER: app:staging
       POSTGRES_PORT: 5432
       PGDATA: /var/lib/postgresql/data/pg_data
