@@ -15,3 +15,22 @@ services:
       - "8081:8081"
     environment: 
       NODE_ENV: staging
+      DATABASE_HOST: pg
+      DATABASE_PORT: 5432
+      DATABASE_USERNAME: app:staging
+      DATABASE_PASSWORD: testing
+      SECRET_KEY_SIZE: 5
+    depends_on:
+      - pg
+  pg:
+    image: postgres:alpine
+    stdin_open: true
+    tty: true
+    volumes: 
+    - ./backend/.tmp/pg_data:/var/lib/postgresql/data/pg_data
+    environment:
+      POSTGRES_PASSWORD: testing
+      POSTGRES_DB: staging
+      POSTGRES_USER: app:staging
+      POSTGRES_PORT: 5432
+      PGDATA: /var/lib/postgresql/data/pg_data
