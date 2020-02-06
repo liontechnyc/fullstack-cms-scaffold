@@ -2,6 +2,7 @@ image: node:latest
 
 variables:
   APP_ID: lts-cms-core
+  PG_PLAN: hobby-dev
 
 stages:
   - build
@@ -25,24 +26,29 @@ build_frontend:
 
 deploy_to_heroku:
   stage: deploy
+
   before_script:
     - git remote add heroku https://heroku:$HEROKU_API_KEY@git.heroku.com/$APP_ID.git
     - npm install -g heroku
     - heroku create $APP_ID || echo 'App already exist, skipping app creation...'
+    - heroku addons:create heroku-postgresql:$PG_PLAN || echo 'DB already exist, skipping creation...'
+  
   script:
     - git subtree --prefix backend push heroku master
 
 
 deploy_to_netlify:
   stage: deploy
+  
   dependencies:
     - build_frontend
+  
   before_script:
     - npm install netlify-cli -g
-    - sed -i s/__APP_ID__/${APP_ID}/g netlify.toml
-    # TODO: Set netlify site name to app-id
-    # - export NETLIFY_APP_DATA=$(printf '\{ "site_id" : "%s", "name" : "%s" \}' $NETLIFY_SITE_ID $APP_ID)
-    # - netlify api updateSite --data $NETLIFY_APP_DATA
+    - > 
+        netlify api getSite --data \ 
+        $(printf '{ "site_id": "%s", "site_name": "%s" }' "$NETLIFY_SITE_ID" "$APP_ID")
+  
   script:
     - netlify --telemetry-disable
     - netlify deploy --site $NETLIFY_SITE_ID --auth $NETLIFY_AUTH_TOKEN --prod
