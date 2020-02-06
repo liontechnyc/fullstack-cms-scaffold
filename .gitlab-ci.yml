@@ -43,7 +43,5 @@ deploy_to_netlify:
   before_script:
     - npm install netlify-cli -g
     - netlify --telemetry-disable
-    - netlify sites:create --name $APP_ID || echo 'Site already exist on Netlify skipping creation...'
-    - netlify link --name $APP_ID || echo 'Site already linked, skipping...'
   script:
     - netlify deploy --dir frontend --site $NETLIFY_SITE_ID --auth $NETLIFY_AUTH_TOKEN --prod
