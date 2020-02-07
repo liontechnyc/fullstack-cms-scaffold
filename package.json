@@ -11,10 +11,10 @@
     },
     "scripts": {
         "install": "npm --prefix backend install || npm --prefix frontend install",
-        "develop:frontend": "npm --prefix frontend run start",
-        "develop:backend": "npm --prefix backend run develop",
-        "build:staging" : "npm --prefix frontend run build:staging && docker-compose -f docker-compose.yml -f docker-compose.staging.yml build",
-        "staging": "docker-compose -f docker-compose.yml -f docker-compose.staging.yml up",
+        "develop:frontend": "kill-port 8000 && npm --prefix frontend start",
+        "develop:backend": "kill-port 8001 && npm --prefix backend start",
+        "build:staging": "npm --prefix frontend run build:staging && docker-compose -f docker-compose.yml -f docker-compose.staging.yml build",
+        "staging": "kill-port 8080 8081 && docker-compose -f docker-compose.yml -f docker-compose.staging.yml up",
         "docker:down": "docker-compose down"
     },
     "repository": {
@@ -23,5 +23,8 @@
     },
     "bugs": {
         "url": "https://gitlab.com/liontechnyc/inergy/cms-stack"
+    },
+    "devDependencies": {
+        "kill-port": "^1.6.0"
     }
 }
