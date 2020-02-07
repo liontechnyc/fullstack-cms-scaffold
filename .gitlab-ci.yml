@@ -11,6 +11,7 @@ stages:
 cache:
   paths:
     - frontend/node_modules/
+    - backend/node_modules/
 
 build_frontend_app:
   stage: build
@@ -34,7 +35,7 @@ build_backend_admin:
     - npm --prefix backend run build
   artifacts:
     paths:
-      - backend/public
+      - backend/build
 
 deploy_to_heroku:
   stage: publish
@@ -47,8 +48,8 @@ deploy_to_heroku:
     - git checkout master
     - git fetch --unshallow
   script:
-    - git add -f backend/public
-    - git commit -m "Attaching pre-compiled admin view to Heroku build"
+    - git add -f backend/build
+    - git commit -m "Attaching pre-compiled Admin UI to Heroku build"
     - git remote add heroku https://heroku:$HEROKU_API_KEY@git.heroku.com/$APP_ID.git
     - git push -f heroku HEAD:master
 
