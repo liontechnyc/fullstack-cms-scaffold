@@ -35,13 +35,8 @@ deploy_to_heroku:
     - heroku addons:create heroku-postgresql:$PG_PLAN --app $APP_ID --name lts-pg-$APP_ID --wait || echo 'DB already exist, skipping creation...'
 
   script:
-<<<<<<< HEAD
-    - git pull
+    - git pull origin master
     - git push -f https://heroku:$HEROKU_API_KEY@git.heroku.com/$APP_ID.git master
-=======
-    - git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$APP_ID.git master
->>>>>>> be7346f601600efc10c584959d06289071c0d023
-
 
 deploy_to_netlify:
   stage: deploy
