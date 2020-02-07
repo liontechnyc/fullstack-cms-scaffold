@@ -36,6 +36,7 @@ deploy_to_heroku:
 
   script:
     - git checkout master
+    - git fetch --all --unshallow
     - git push -f https://heroku:$HEROKU_API_KEY@git.heroku.com/$APP_ID.git master
 
 
