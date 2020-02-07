@@ -25,6 +25,8 @@ build_frontend_app:
 
 build_backend_admin:
   stage: build
+  variables:
+    NODE_ENV: production
   before_script:
     - npm install -g strapi@alpha
     - npm --prefix backend install
