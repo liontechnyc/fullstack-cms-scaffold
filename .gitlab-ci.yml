@@ -47,6 +47,8 @@ deploy_to_heroku:
     - heroku config:set APP_ID=$APP_ID --app $APP_ID 
     - git checkout master
     - git fetch --unshallow
+    - git config user.email "gitlab@devops.liontech.nyc"
+    - git config user.name "Gitlab Runner"
   script:
     - git add -f backend/build
     - git commit -m "Attaching pre-compiled Admin UI to Heroku build"
