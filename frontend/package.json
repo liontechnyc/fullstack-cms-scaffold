@@ -29,7 +29,7 @@
   },
   "devDependencies": {
     "prettier": "^1.19.1"
-  }
+  },
   "scripts": {
     "start": "env-cmd -e development gatsby develop",
     "build:staging": "env-cmd -e staging gatsby build",
