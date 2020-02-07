@@ -33,6 +33,7 @@ deploy_to_heroku:
     - npm install -g heroku
     - heroku create $APP_ID || echo 'App already exist, skipping app creation...'
     - heroku addons:create heroku-postgresql:$PG_PLAN --app $APP_ID --name lts-pg-$APP_ID --wait || echo 'DB already exist, skipping creation...'
+    - heroku config:set APP_ID $APP_ID --app $APP_ID 
     - git checkout master
     - git fetch --unshallow
   script:
