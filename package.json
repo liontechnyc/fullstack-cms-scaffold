@@ -5,15 +5,12 @@
     "version": "0.1.0",
     "author": "Ezra Singh <ezra@liontech.nyc>",
     "dependencies": {},
-    "license": "MIT",
     "engines": {
         "node": ">=10.0.0",
         "npm": ">=6.0.0"
     },
     "scripts": {
-        "preinstall": "npm install -g strapi@alpha",
         "install": "npm --prefix backend install || npm --prefix frontend install",
-        "postinstall": "npm --prefix backend run build",
         "develop:frontend": "npm --prefix frontend run start",
         "develop:backend": "npm --prefix backend run develop",
         "build:staging" : "npm --prefix frontend run build:staging && docker-compose -f docker-compose.yml -f docker-compose.staging.yml build",

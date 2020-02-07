@@ -6,13 +6,13 @@ variables:
 
 stages:
   - build
-  - deploy
+  - publish
 
 cache:
   paths:
     - frontend/node_modules/
 
-build_frontend:
+build_frontend_app:
   stage: build
   before_script:
     - npm --prefix frontend install
@@ -23,11 +23,19 @@ build_frontend:
     paths:
       - frontend/public
 
-deploy_to_heroku:
-  stage: deploy
+build_backend_admin:
+  stage: build
+  before_script:
+    - npm install -g strapi@alpha
+    - npm --prefix backend install
+  script:
+    - npm --prefix backend run build
+  artifacts:
+    paths:
+      - backend/public
 
-  only:
-    - master
+deploy_to_heroku:
+  stage: publish
 
   before_script:
     - npm install -g heroku
@@ -37,11 +45,13 @@ deploy_to_heroku:
     - git checkout master
     - git fetch --unshallow
   script:
+    - git add -f backend/public
+    - git commit -m "Attaching pre-compiled admin view to Heroku build"
     - git remote add heroku https://heroku:$HEROKU_API_KEY@git.heroku.com/$APP_ID.git
     - git push -f heroku HEAD:master
 
 deploy_to_netlify:
-  stage: deploy
+  stage: publish
   
   before_script:
     - npm install netlify-cli -g
