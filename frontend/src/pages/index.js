@@ -1,4 +1,5 @@
 import React from "react"
+import { Link } from "gatsby"
 
 import Page from "../components/page"
 import SEO from "../components/seo"
@@ -15,6 +16,10 @@ const IndexPage = () => (
         Here is a simple list of <i>books</i> from the backend:
         <br/>
         <Books/>
+        <br/>
+        <Link to="/modal-example/" state={{ modal: true }}>
+          Open modal
+        </Link>
       </span>
     </section>
   </Page>

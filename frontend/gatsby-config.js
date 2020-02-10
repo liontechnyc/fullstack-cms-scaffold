@@ -14,6 +14,7 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
+    `gatsby-plugin-modal-routing`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {

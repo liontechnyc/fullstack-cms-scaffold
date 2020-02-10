@@ -1,10 +1,8 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
-import { ApolloProvider } from "@apollo/react-hooks"
 
-import client from "../lib/apollo/client"
-import "../styles/core.scss"
+import UI from "./ui"
 
 /**
  * ? Flexible page layout to structure navigation and content  
@@ -21,8 +19,9 @@ const Page = ({ children }) => {
   `)
 
   return (
-    <ApolloProvider client={client}>
+    <UI>
       <div className="page__layout is-vertical">
+        {/* Navigation */}
         <nav className="page__navigation">
           <div className="page__navigation--container align-center">
             <div className="page__navigation--item brand">
@@ -30,10 +29,13 @@ const Page = ({ children }) => {
             </div>
           </div>
         </nav>
+        {/* Page */}
         <div className="page__container">
+          {/* Content */}
           <main className="page__content--container is-vertical is-wide">
             { children } {/* Page content */}
           </main>
+          {/* Footer */}
           <footer className="page__footer">
             {/* Footer content */}
             © {new Date().getFullYear()} &nbsp; 
@@ -42,7 +44,7 @@ const Page = ({ children }) => {
           </footer>
         </div>
       </div>
-    </ApolloProvider>
+    </UI>
   )
 }
 

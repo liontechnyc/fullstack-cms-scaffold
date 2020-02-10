@@ -37,3 +37,7 @@ body {
 
 // ? Enable scrollbar styling works only in chrome
 // @include scrollbars(0.5em, palette("accent", "dark"));
+
+.ReactModal__Overlay{
+    z-index: 200;
+}
