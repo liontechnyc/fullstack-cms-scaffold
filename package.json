@@ -10,7 +10,7 @@
         "npm": ">=6.0.0"
     },
     "scripts": {
-        "install": "npm --prefix backend install || npm --prefix frontend install",
+        "postinstall": "npm --prefix backend install || npm --prefix frontend install",
         "develop:frontend": "kill-port 8000 && npm --prefix frontend start",
         "develop:backend": "kill-port 8001 && npm --prefix backend start",
         "build:staging": "npm --prefix frontend run build:staging && docker-compose -f docker-compose.yml -f docker-compose.staging.yml build",
