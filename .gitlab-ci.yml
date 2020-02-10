@@ -15,6 +15,9 @@ cache:
 
 build_frontend_app:
   stage: build
+  only:
+    refs:
+      - master
   before_script:
     - npm --prefix frontend install
   script:
@@ -26,6 +29,9 @@ build_frontend_app:
 
 build_backend_admin:
   stage: build
+  only:
+    refs:
+      - master
   variables:
     NODE_ENV: production
   before_script:
@@ -39,7 +45,9 @@ build_backend_admin:
 
 deploy_to_heroku:
   stage: publish
-
+  only:
+    refs:
+      - master
   before_script:
     - npm install -g heroku
     - heroku create $APP_ID || echo 'App already exist, skipping app creation...'
@@ -57,7 +65,9 @@ deploy_to_heroku:
 
 deploy_to_netlify:
   stage: publish
-  
+  only:
+    refs:
+      - master
   before_script:
     - npm install netlify-cli -g
     - netlify --telemetry-disable
