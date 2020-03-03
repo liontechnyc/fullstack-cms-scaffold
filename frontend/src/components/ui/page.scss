@@ -53,12 +53,13 @@
     &__navigation{
         display: flex;
         position: relative;
-        padding: 2em;
+        padding: 1em;
         z-index: 100;
         &.is-fixed{
             position: fixed;
             top: 0;
             left: 0;
+            right: 0;
         }
         &.is-sticky{
             position: sticky;

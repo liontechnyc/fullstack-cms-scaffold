@@ -23,9 +23,7 @@ const Page = ({
     contentLayout, 
     contentSpacing,
     justifyNavContent, 
-    fixedNav, 
-    fluidNav,
-    stickyNav,
+    navPlacement,
     hideFooter,
     children 
   }) => {
@@ -47,9 +45,8 @@ const Page = ({
     "is-horizontal" : pageLayout === 'horizontal'
    })
   const navigationClass = cx("page__navigation", {
-    "is-fixed" : fixedNav,
-    "is-fluid" : fluidNav,
-    "is-sticky" : stickyNav
+    "is-fixed" : navPlacement === 'fixed',
+    "is-sticky" : navPlacement === 'sticky'
   })
   const navigationContainerClass = cx("page__navigation--container", {
     "is-horizontal" : pageLayout === 'vertical',
@@ -107,9 +104,7 @@ Page.propTypes = {
   contentLayout: containerLayoutType,
   contentSpacing: PropTypes.oneOf(['wide', 'narrow', 'fluid']),
   justifyNavContent: navJustificationType,
-  fixedNav: PropTypes.bool,
-  fluidNav: PropTypes.bool,
-  stickyNav: PropTypes.bool,
+  navPlacement: PropTypes.oneOf([ 'sticky', 'fixed' ]),
   hideFooter: PropTypes.bool,
   children: PropTypes.node.isRequired,
 }

@@ -37,6 +37,9 @@ $linkSpacing: 1em;
                 flex-direction: row;
                 a{
                     margin: 0 $linkSpacing;
+                    @include mobile{
+                        margin: 0 ($linkSpacing / 2);
+                    }
                 }
             }
         }
@@ -54,6 +57,9 @@ $linkSpacing: 1em;
                 flex-direction: column;
                 a{
                     margin: $linkSpacing 0;
+                    @include mobile{
+                        margin:  ($linkSpacing / 2) 0;
+                    }
                 }
             }
         }
@@ -71,6 +77,9 @@ $linkSpacing: 1em;
             text-align: center;
             padding: 2em;
             font-size: calc(4em -2px);
+            @include mobile{
+                padding: 1em;
+            }
             .fas{
                 transition: ease-in-out 256ms;
                 &:hover{
@@ -85,10 +94,16 @@ $linkSpacing: 1em;
             display: flex;
             flex-direction: column;
             padding: 4em 2em;
+            @include mobile{
+                padding: 2em 1em;
+            }
             header{
                 text-transform: uppercase;
                 font-weight: 700;
                 margin: 4em 0;
+                @include mobile{
+                    margin: 2em 0;
+                }
             }
             footer{
                 span{
@@ -97,7 +112,7 @@ $linkSpacing: 1em;
                     opacity: 0.7;
                     font-weight: 500;
                     @include mobile{
-                        font-size: calc(1em + 2px);
+                        font-size: calc(16px - 1em/4);
                     }
                 }
                 .fab{

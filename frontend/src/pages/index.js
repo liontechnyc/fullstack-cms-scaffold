@@ -8,8 +8,8 @@ const IndexPage = () => (
     pageLayout="vertical"
     contentLayout="vertical"
     contentSpacing="wide"
-    stickyNav
     justifyNavContent="end"
+    navPlacement="sticky"
   >
     <SEO title="Home" />
     <Section>
