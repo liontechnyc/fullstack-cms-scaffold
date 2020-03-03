@@ -87,7 +87,7 @@ const Page = ({
           { children } {/* Page content */}
         </main>
         {/* Footer */}
-        <footer className="page__footer">
+        <footer className={footerClass}>
           {/* Footer content */}
           © {new Date().getFullYear()} &nbsp; 
           Built with &nbsp;{`💖`} &nbsp;by &nbsp;
