@@ -1,0 +1,26 @@
+
+mutation signUpUser(
+    $username: String!,
+    $email: String!,
+    $provider: String,
+    $password: String,
+    $resetPasswordToken: String,
+    $blocked: Boolean,
+    $role: ID
+){
+  register(input:{
+    username: $username,
+    email: $email,
+    password: $password
+  }){
+    jwt,
+    user{
+      id
+      email
+      confirmed
+      role{
+          type
+      }
+    }
+  }
+}

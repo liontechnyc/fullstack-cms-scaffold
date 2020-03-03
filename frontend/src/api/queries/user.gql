@@ -1,0 +1,15 @@
+
+query loadMyProfile{
+    me{
+        id
+        usernmae
+        email
+        confirmed
+        blocked
+        role{
+            type
+            name
+            description
+        }
+    }
+}

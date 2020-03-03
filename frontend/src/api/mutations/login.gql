@@ -1,0 +1,24 @@
+mutation userLogin(
+    $userId: String!, 
+    $password: String!, 
+    $provider: String = "local"
+){
+    login(
+        input: {
+            identifier: $userId,
+            password: $password,
+            provider: $provider
+        }
+        ){
+            jwt
+            user{
+                id
+                username
+                email
+                confirmed
+                role{
+                    type
+                }
+            }
+        }
+}
