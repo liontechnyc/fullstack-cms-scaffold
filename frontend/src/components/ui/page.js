@@ -7,7 +7,8 @@ import {
   containerLayoutType,
   navJustificationType
  } from "../../lib/propTypes"
-import useSiteMetadata from "../../hooks/use-site-metadata"
+import useSiteMenu from "../../hooks/use-site-menu"
+ import useSiteMetadata from "../../hooks/use-site-metadata"
 
 import Navigation from "../navigation"
 import Menu from "../menu"
@@ -28,7 +29,10 @@ const Page = ({
     hideFooter,
     children 
   }) => {
-  const [ menuIsVisibile, setMenuVisibility ] = useState(false)
+  const { 
+    menuIsVisible, 
+    setMenuVisibility 
+  } = useSiteMenu()
   const { 
     author, 
     facebook,
@@ -76,7 +80,7 @@ const Page = ({
         <Menu
           header={author}
           closeMenu={() => setMenuVisibility(false)}
-          isVisible={menuIsVisibile}
+          isVisible={menuIsVisible}
           social={social}
         />
       </nav>
