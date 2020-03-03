@@ -1,7 +1,0 @@
-
-query listAllBooks{
-    books {
-        id,
-        title
-    }
-}

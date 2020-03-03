@@ -2,7 +2,6 @@ import React from "react"
 import { Link } from "gatsby"
 
 import { Page, SEO } from "../components/ui"
-import Books from "../components/books"
 
 const IndexPage = () => (
   <Page>
@@ -14,7 +13,6 @@ const IndexPage = () => (
         <br/><br/>
         Here is a simple list of <i>books</i> from the backend:
         <br/>
-        <Books/>
         <br/>
         <Link to="/modal-example/" state={{ modal: true }}>
           Open modal
