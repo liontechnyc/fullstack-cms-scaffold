@@ -14,21 +14,8 @@ const IndexPage = () => (
     <SEO title="Home" />
     <Section>
       <h1>Hi people, welcome to Inergy CMS Frontend</h1>
-      <Section>
-        <em>Please note that is a boilerplate and you should necessarily remove the books content type!</em>
-        <br/><br/>
-        Here is a simple list of <i>books</i> from the backend:
-        <br/>
-        <br/>
-        <Link to="/modal-example/" state={{ modal: true }}>
-          Open modal
-        </Link>
-      </Section>
-      <Section>
-        <em>Please note that is a boilerplate and you should necessarily remove the books content type!</em>
-        <br/><br/>
-        Here is a simple list of <i>books</i> from the backend:
-        <br/>
+      <Section contentLayout="horizontal">
+        <em>Please note that is a boilerplate and you should necessarily remove this code</em>
         <br/>
         <Link to="/modal-example/" state={{ modal: true }}>
           Open modal
@@ -37,16 +24,13 @@ const IndexPage = () => (
     </Section>
     <Section>
       <h1>Hi people, welcome to Inergy CMS Frontend</h1>
-      <span>
-        <em>Please note that is a boilerplate and you should necessarily remove the books content type!</em>
-        <br/><br/>
-        Here is a simple list of <i>books</i> from the backend:
-        <br/>
+      <Section contentLayout="vertical">
+        <em>Please note that is a boilerplate and you should necessarily remove this code</em>
         <br/>
         <Link to="/modal-example/" state={{ modal: true }}>
           Open modal
         </Link>
-      </span>
+      </Section>
     </Section>
   </Page>
 )
