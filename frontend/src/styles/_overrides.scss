@@ -1,5 +1,18 @@
 // ? Place all style overrides in this script
 
+html, body{
+    overflow-x: hidden;
+    @include mobile {
+        //max-width: $mobile-width;
+    }
+    @include tablet {
+        //max-width: $tablet-width;
+    }
+    @include desktop {
+        //max-width: $desktop-width;
+    }
+}
+
 .page{
     &__navigation{
         z-index: 500;
