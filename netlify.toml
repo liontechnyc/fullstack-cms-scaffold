@@ -1,4 +1,5 @@
 # Netlify config for frontend
 
 [build]
-    publish = "frontend/public"
+    base = "frontend"
+    command = "npm run build"
