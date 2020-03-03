@@ -1,28 +1,23 @@
 import React from "react"
 import { useQuery } from "@apollo/react-hooks"
-import { gql } from "apollo-boost"
+import LIST_ALL_BOOKS from "../api/queries/list-all-books.gql"
 
-const BOOKS = gql`
-    query listBooks{
-        books {
-            id,
-            title
-        }
-    }
-`
-
+import { Loader } from "./ui"
+ 
 const Books = ({}) => {
-    const { data, loading, error } = useQuery(BOOKS)
-    if(error){ return <strong>Oof: could not fetch books</strong> }
-    if(loading){ return <span>Loading <i>le</i> books ;) ...</span> }
+    const { data, loading, error } = useQuery(LIST_ALL_BOOKS)
+    const books = !loading && !error ? data.books : [ null ]
+    if(error) return <strong>Oof: could not query books</strong>
     return(
         <ul>
-        {data.books.map(
-            ({ id, title }) => (
-                <li key={id.toString()}>
-                    { title }
-                </li>    
-            ))
+        {error || !loading ? 
+            (books.map(
+                ({ id, title }) => (
+                    <li key={id.toString()}>
+                        { title }
+                    </li>    
+                ))
+            ) : <Loader fullscreen/>
         }
         </ul>
     )
