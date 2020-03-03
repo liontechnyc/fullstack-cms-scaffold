@@ -1,1 +1,9 @@
 // ? Place all style overrides in this script
+
+.page{
+    &__navigation{
+        z-index: 500;
+        background: #fff;
+        @include boxshadow(6);
+    }
+}
