@@ -9,4 +9,4 @@ const ModalPage = ({ modal, closeTo }) => {
     )
 }
 
-export default ModalPage
+export default asModal(ModalPage)
