@@ -2,7 +2,7 @@
     "name": "lts-cms-core",
     "private": true,
     "description": "An application stack for rapidly deploying fullstack CMS solutions",
-    "version": "0.1.0",
+    "version": "1.1.0",
     "author": "Ezra Singh <ezra@liontech.nyc>",
     "dependencies": {},
     "engines": {
@@ -10,7 +10,7 @@
         "npm": ">=6.0.0"
     },
     "scripts": {
-        "postinstall": "npm --prefix backend install || npm --prefix frontend install",
+        "develop": "npm-run-all --parallel develop:frontend develop:backend",
         "develop:frontend": "kill-port 8000 && npm --prefix frontend start",
         "develop:backend": "kill-port 8001 && npm --prefix backend start",
         "build:staging": "npm --prefix frontend run build:staging && docker-compose -f docker-compose.yml -f docker-compose.staging.yml build",
@@ -25,6 +25,7 @@
         "url": "https://gitlab.com/liontechnyc/inergy/cms-stack"
     },
     "devDependencies": {
-        "kill-port": "^1.6.0"
+        "kill-port": "^1.6.0",
+        "npm-run-all": "^4.1.5"
     }
 }
