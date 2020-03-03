@@ -3,6 +3,7 @@ import { Link } from "gatsby"
 import PropTypes from "prop-types"
 
 import { renderSocialIcons } from "../lib/utils"
+import { socialLinksType } from "../lib/propTypes"
 
 const Menu = ({ header, isVisible, closeMenu, social }) => {
     return(
@@ -15,8 +16,8 @@ const Menu = ({ header, isVisible, closeMenu, social }) => {
                 onClick={(e) => e.stopPropagation()} 
                 className="navigation__menu--container"
             >
-                <div>
-                    <i onClick={closeMenu} className="fas fa-times"/>
+                <div className="navigation__menu--close">
+                    <i onClick={closeMenu} className="navigation__btn fas fa-times"/>
                 </div>
                 <div className="navigation__menu--list-container">
                     <header>
@@ -57,13 +58,7 @@ Menu.propTypes = {
     header: PropTypes.string.isRequired,
     isVisible: PropTypes.bool,
     closeMenu: PropTypes.func.isRequired,
-    social: PropTypes.shape({
-        facebook: PropTypes.string,
-        instagram: PropTypes.string,
-        soundcloud: PropTypes.string,
-        twitter: PropTypes.string,
-        youtube: PropTypes.string
-    }).isRequired
+    social: socialLinksType
 }
 
 export default Menu

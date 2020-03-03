@@ -1,39 +1,84 @@
-import React from "react"
+import React, { useState } from "react"
 import PropTypes from "prop-types"
 import cx from "classnames"
 
-import Navigation from "../navigation"
-
 import { withApolloClient } from "../../lib/ui"
+import { 
+  containerLayoutType,
+  navJustificationType
+ } from "../../lib/propTypes"
+import useSiteMetadata from "../../hooks/use-site-metadata"
+
+import Navigation from "../navigation"
+import Menu from "../menu"
 
 import "./page.scss"
 
 /**
  * ? Flexible page layout to structure navigation and content  
  */
-const Page = ({ layout, contentLayout, contentSpacing, fixedNav, fluidNav, children }) => {
+const Page = ({ 
+    pageLayout, 
+    contentLayout, 
+    contentSpacing,
+    justifyNavContent, 
+    fixedNav, 
+    fluidNav,
+    stickyNav,
+    hideFooter,
+    children 
+  }) => {
+  const [ menuIsVisibile, setMenuVisibility ] = useState(false)
+  const { 
+    author, 
+    facebook,
+    twitter,
+    instagram, 
+    soundcloud, 
+    youtube
+  } = useSiteMetadata()
+  const social = { facebook, twitter, instagram, soundcloud, youtube }
   const pageLayoutClass = cx("page__layout", { 
-    "is-vertical" : layout === 'vertical',
-    "is-horizontal" : layout === 'horizontal'
+    "is-vertical" : pageLayout === 'vertical',
+    "is-horizontal" : pageLayout === 'horizontal'
    })
-  const navigationContainerClass = cx("page__navigation--container", {
+  const navigationClass = cx("page__navigation", {
     "is-fixed" : fixedNav,
-    "is-fluid" : fluidNav
+    "is-fluid" : fluidNav,
+    "is-sticky" : stickyNav
+  })
+  const navigationContainerClass = cx("page__navigation--container", {
+    "is-horizontal" : pageLayout === 'vertical',
+    "is-vertical" : pageLayout === 'horizontal'
   })
   const contentContainerClass = cx("page__content--container", {
-    "is-row" : contentLayout === 'row',
-    "is-column" : contentLayout === 'column',
+    "is-horizontal" : contentLayout === 'horizontal',
+    "is-vertical" : contentLayout === 'vertical',
     "is-wide" : contentSpacing === 'wide',
     "is-narrow" : contentSpacing === 'narrow',
     "is-fluid" : contentSpacing === 'fluid'
   })
+  const footerClass = cx("page__footer", {
+    "is-hidden": hideFooter
+  })
   return (
     <div className={pageLayoutClass}>
       {/* Navigation */}
-      <nav className="page__navigation">
+      <nav className={navigationClass}>
         <div className={navigationContainerClass}>
-          <Navigation/>
+          <Navigation
+            social={social}
+            openMenu={() => setMenuVisibility(true)}
+            pageLayout={pageLayout}
+            justifyNavContent={justifyNavContent}
+          />
         </div>
+        <Menu
+          header={author}
+          closeMenu={() => setMenuVisibility(false)}
+          isVisible={menuIsVisibile}
+          social={social}
+        />
       </nav>
       {/* Page */}
       <div className="page__container">
@@ -54,17 +99,22 @@ const Page = ({ layout, contentLayout, contentSpacing, fixedNav, fluidNav, child
 }
 
 Page.propTypes = {
-  layout: PropTypes.string,
-  contentLayout: PropTypes.string,
-  contentSpacing: PropTypes.string,
+  pageLayout: containerLayoutType,
+  contentLayout: containerLayoutType,
+  contentSpacing: PropTypes.oneOf(['wide', 'narrow', 'fluid']),
+  justifyNavContent: navJustificationType,
   fixedNav: PropTypes.bool,
   fluidNav: PropTypes.bool,
+  stickyNav: PropTypes.bool,
+  hideFooter: PropTypes.bool,
   children: PropTypes.node.isRequired,
 }
 
 Page.defaultProps = {
-  layout: 'row',
-  contentLayout: 'row'
+  pageLayout: 'vertical',
+  contentLayout: 'vertical',
+  justifyNavContent: 'end',
+  fluidNav: true
 }
 
 export default withApolloClient(Page)

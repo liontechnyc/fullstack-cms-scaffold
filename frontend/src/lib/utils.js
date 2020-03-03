@@ -5,6 +5,7 @@ import React from "react"
  * @param {*} social - object mapping social media channel slug to URI
  */
 export function renderSocialIcons(social){
+    if(!social) return null
     return(
         Object
         .entries(social)

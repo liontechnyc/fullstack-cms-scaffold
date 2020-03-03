@@ -36,17 +36,25 @@
             &.is-narrow{ padding: 0 8em; }
         }
         &--block{
+            display: flex;
             flex: 1 0;
+            &.is-narrow{
+                flex: 0 1;
+            }
+            /* // ? Positions the block's children content direction */
+            &.is-vertical{ flex-direction: column; }
+            &.is-horizontal{ flex-direction: row; }
+
         }
     }
     /**
      * ? Structures navigation content within page layout
     */
     &__navigation{
-        z-index: 100;
+        display: flex;
         position: relative;
         padding: 2em;
-        // !!! THESE MODIFIERS NEED TESTING
+        z-index: 100;
         &.is-fixed{
             position: fixed;
             top: 0;
@@ -56,19 +64,13 @@
             position: sticky;
             top: 0;
         }
-        // !! -----------------------------
         &--container{
+            flex: 1 0;
             display: flex;
             align-items: center;
-            &.align-center{
-                justify-content: center;
-            }
-
-        }
-        &--item{
-            &.brand{
-                font-weight: 900;
-            }
+            justify-content: space-between;
+            &.is-horizontal{ flex-direction: row; }
+            &.is-vertical{ flex-direction: column; }
         }
     }
     /**
@@ -78,5 +80,8 @@
         position: relative;
         flex: 0 1;
         padding: 4em;
+        &.is-hidden{
+            display: none;
+        }
     }
 }

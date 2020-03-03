@@ -28,7 +28,8 @@ $desktop-width: 1024px;
     user-select: none;
 }
 
-@mixin overlay($mode: absolute){
+@mixin overlay($mode: absolute, $layer: 500){
+    z-index: $layer;
     position: $mode;
     top: 0;
     left: 0;
