@@ -46,7 +46,8 @@ const Page = ({
    })
   const navigationClass = cx("page__navigation", {
     "is-fixed" : navPlacement === 'fixed',
-    "is-sticky" : navPlacement === 'sticky'
+    "is-sticky" : navPlacement === 'sticky',
+    "is-absolute" : navPlacement === 'absolute'
   })
   const navigationContainerClass = cx("page__navigation--container", {
     "is-horizontal" : pageLayout === 'vertical',

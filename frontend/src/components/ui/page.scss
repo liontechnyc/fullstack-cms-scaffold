@@ -61,6 +61,12 @@
             left: 0;
             right: 0;
         }
+        &.is-absolute{
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+        }
         &.is-sticky{
             position: sticky;
             top: 0;
