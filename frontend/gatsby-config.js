@@ -11,6 +11,14 @@ module.exports = {
     `gatsby-plugin-sass`,
     `gatsby-plugin-graphql-loader`,
     `gatsby-plugin-react-helmet`,
+    `gatsby-transformer-yaml`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `content`,
+        path: `${__dirname}/src/content`
+      }
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
