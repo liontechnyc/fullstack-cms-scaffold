@@ -9,6 +9,9 @@ const useSiteMetadata = () => {
             title
             description
             author
+            instagram
+            facebook
+            linkedin
           }
         }
       }

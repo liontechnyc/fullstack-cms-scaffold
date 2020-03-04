@@ -9,5 +9,6 @@ export const socialLinksType = PropTypes.shape({
     instagram: PropTypes.string,
     soundcloud: PropTypes.string,
     twitter: PropTypes.string,
-    youtube: PropTypes.string
+    youtube: PropTypes.string,
+    linkedin : PropTypes.string
 })

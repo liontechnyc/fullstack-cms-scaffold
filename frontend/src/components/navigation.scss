@@ -3,6 +3,10 @@
 $linkSpacing: 1em;
 
 .navigation{
+    &__header{
+        letter-spacing: 1px;
+        font-weight: 400;
+    }
     &__btn{
         display: inline-flex;
         flex: 0 1;
@@ -35,6 +39,7 @@ $linkSpacing: 1em;
             }
             .navigation__content--container{
                 flex-direction: row;
+                align-items: center;
                 a{
                     margin: 0 $linkSpacing;
                     @include mobile{
@@ -55,6 +60,7 @@ $linkSpacing: 1em;
             }
             .navigation__content--container{
                 flex-direction: column;
+                justify-content: center;
                 a{
                     margin: $linkSpacing 0;
                     @include mobile{

@@ -34,12 +34,10 @@ const Page = ({
   const { 
     author, 
     facebook,
-    twitter,
-    instagram, 
-    soundcloud, 
-    youtube
+    instagram,  
+    linkedin
   } = useSiteMetadata()
-  const social = { facebook, twitter, instagram, soundcloud, youtube }
+  const social = { facebook, instagram, linkedin }
   const pageLayoutClass = cx("page__layout", { 
     "is-vertical" : pageLayout === 'vertical',
     "is-horizontal" : pageLayout === 'horizontal'

@@ -3,6 +3,7 @@ import { Link } from "gatsby"
 import cx from "classnames"
 import PropTypes from "prop-types"
 
+import { renderSocialIcons } from "../lib/utils"
 import {
     navJustificationType, 
     socialLinksType
@@ -23,18 +24,20 @@ const Navigation = ({ pageLayout, justifyNavContent, openMenu, social }) => {
     })
     return(
         <>
+            <header className="navigation__header">
+                <strong>LionTechNYC</strong>
+            </header>
+            <div className={contentClass}>
+                <div className="navigation__content--container">
+                    <Link to="/">Home</Link>
+                    {renderSocialIcons(social)}
+                </div>
+            </div>
             <div 
                 className="navigation__btn"
                 onClick={openMenu}
             >
                 <i className="fas fa-bars"/>
-            </div>
-            <div className={contentClass}>
-                <div className="navigation__content--container">
-                    <Link to="/">Home</Link>
-                    <Link to="/">Link A</Link>
-                    <Link to="/">Link B</Link>
-                </div>
             </div>
         </>
     )

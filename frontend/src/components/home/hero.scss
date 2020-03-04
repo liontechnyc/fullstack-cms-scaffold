@@ -1,0 +1,49 @@
+@import "../../styles/mixins";
+
+$heroFontColor: rgba(#fff, 0.95);
+$heroBgImage: "https://cdn.stocksnap.io/img-thumbs/960w/A0DYKMDRAL.jpg";
+
+.hero{
+    &__container{
+        display: flex;
+        background-position-x: center;
+        background-attachment: fixed;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-image: url($heroBgImage);
+        position: relative;
+        min-height: 100vh;
+        overflow-x: hidden;
+        color: $heroFontColor;
+        @include boxshadow(4);
+    }
+    &__content{
+        position: relative;
+        display: flex;
+        margin-top: 32px;
+        padding: 0 25px;
+        align-items: center;
+        flex-direction: column;
+        &--subtitle{
+            @include mobile{
+                font-size: 18px;
+                margin: 0 0 12px;
+            }
+        }
+        &--title{
+            text-align: right;
+            @include mobile{
+                font-size: 40px;
+                margin: 12px 0 0;
+                line-height: 1.5;
+            }
+        }
+        &--footer{
+            flex: 1 0;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+}
