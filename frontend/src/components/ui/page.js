@@ -32,6 +32,7 @@ const Page = ({
     setMenuVisibility 
   } = useSiteMenu()
   const { 
+    title,
     author, 
     facebook,
     instagram,  
@@ -67,6 +68,7 @@ const Page = ({
       <nav className={navigationClass}>
         <div className={navigationContainerClass}>
           <Navigation
+            header={title}
             social={social}
             openMenu={() => setMenuVisibility(true)}
             pageLayout={pageLayout}
