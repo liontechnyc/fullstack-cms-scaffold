@@ -1,14 +1,29 @@
 import React from "react"
+import { useStaticQuery, graphql } from "gatsby"
 
-import { Tabulation } from ""
+import { Tabulation } from "../components/ui"
 
-import "./solutions.scss"
+const LIST_SOLUTIONS = graphql`
+    query ListSolutions{
+        contentYaml{
+            solutions{
+                title
+                description
+                cta_link
+            }
+        }
+    }
+`
+
 
 const Solutions = () => {
+    const { contentYaml: { solutions } } = useStaticQuery(LIST_SOLUTIONS)
     return (
-        <div className="solutions__container">
-
-        </div>
+            <Tabulation
+                cta="Read more"
+                ctaIcon="chevron-right"
+                items={solutions}
+            />
     )
 }
  

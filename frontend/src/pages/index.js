@@ -1,5 +1,4 @@
 import React from "react"
-import { Link } from "gatsby"
 
 import { scrollTo } from "../lib/utils"
 
@@ -12,7 +11,7 @@ import {
 import {
   Services,
   Solutions
-} from "../components/home"
+} from "../containers"
 
 
 const IndexPage = () => (
@@ -65,6 +64,8 @@ const IndexPage = () => (
     <Section>{/* Solutions  */}
       <Hero
         title="Unleash cross-media timely deliverables"
+        alignTitle="left"
+        alignFooter="left"
       >
         <Solutions/>
       </Hero>

@@ -3,20 +3,20 @@ import { useStaticQuery, graphql } from "gatsby"
 
 import "./services.scss"
 
-const Services = () => {
-    const { 
-        contentYaml: { services } 
-    } = useStaticQuery(graphql`
-        query ListServices{
-            contentYaml{
-                services{
-                    title
-                    description
-                    icon
-                }
+const LIST_SERVICES = graphql`
+    query ListServices{
+        contentYaml{
+            services{
+                title
+                description
+                icon
             }
         }
-    `)
+    }
+`
+
+const Services = () => {
+    const { contentYaml: { services } } = useStaticQuery(LIST_SERVICES)
     return(
         <div className="services__container">
             <div className="services__content">
