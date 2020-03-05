@@ -5,12 +5,13 @@ import { scrollTo } from "../lib/utils"
 
 import { 
   Page, 
-  Section, 
+  Section,
+  Hero, 
   SEO
 } from "../components/ui"
 import {
-  Hero,
-  Services
+  Services,
+  Solutions
 } from "../components/home"
 
 
@@ -61,11 +62,11 @@ const IndexPage = () => (
         </a>
       </Hero>
     </Section>
-    <Section>
+    <Section>{/* Solutions  */}
       <Hero
         title="Unleash cross-media timely deliverables"
       >
-        
+        <Solutions/>
       </Hero>
       <Section isWide bgColor="#fffafa">
         <figure className="image__container">
