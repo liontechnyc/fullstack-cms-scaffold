@@ -1,4 +1,4 @@
-@import "../../styles//theme";
+@import "../../styles/theme";
 @import "../../styles/mixins";
 
 .hero{
@@ -12,6 +12,7 @@
         background-attachment: fixed;
         background-size: cover;
         background-repeat: no-repeat;
+        color: $fontColor;
         position: relative;
         overflow-x: hidden;
         @include boxshadow(4);
@@ -26,6 +27,8 @@
         flex-direction: column;
         &--subtitle{
             flex: 0 1;
+            color: inherit;
+            opacity: 0.8;
             @include mobile{
                 font-size: 18px;
                 margin: 0 0 12px;
@@ -33,6 +36,7 @@
         }
         &--title{
             flex: 1 0;
+            color: inherit;
             text-transform: capitalize;
             @include mobile{
                 font-size: 40px;

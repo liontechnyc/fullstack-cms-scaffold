@@ -1,12 +1,15 @@
 import React from "react"
 import PropTypes from "prop-types"
 
+import { alignmentType } from "../../lib/propTypes"
+
 import "./hero.scss"
 
 const Hero = ({ 
         subtitle, 
         title, 
         alignTitle,
+        alignSubtitle,
         alignFooter, 
         bgColor, 
         bgImage, 
@@ -29,6 +32,7 @@ const Hero = ({
         order: invertTitlePlacement ? 1 : 0
     }
     const subTitleStyle = {
+        textAlign: alignSubtitle,
         order: !invertTitlePlacement ? 1 : 0
     }
     const footerStyle = {
@@ -55,8 +59,9 @@ const Hero = ({
 Hero.propTypes = {
     subtitle: PropTypes.string,
     title: PropTypes.string,
-    alignTitle: PropTypes.oneOf(['left', 'center', 'right' ]),
-    alignFooter: PropTypes.oneOf([ 'left', 'center', 'right' ]),
+    alignTitle: alignmentType,
+    alignSubtitle: alignmentType,
+    alignFooter: alignmentType,
     bgColor: PropTypes.string,
     bgImage: PropTypes.string,
     textColor: PropTypes.string,
@@ -68,6 +73,7 @@ Hero.propTypes = {
 
 Hero.defaultProps = {
     alignTitle: 'center',
+    alignSubtitle: 'center',
     alignFooter: 'center',
     bgColor: undefined,
     bgImage: undefined,
