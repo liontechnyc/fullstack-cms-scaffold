@@ -1,3 +1,4 @@
+@import "../styles/theme";
 @import "../styles/mixins";
 
 $linkSpacing: 1em;
@@ -72,7 +73,8 @@ $linkSpacing: 1em;
     }
     &__menu{
         @include overlay($mode: fixed, $layer: 200);
-        background: #fff;
+        background-color: palette-alpha('background', 'base', 0.8);
+        opacity: 0;
         &--container{
             position: absolute;
             display: flex;

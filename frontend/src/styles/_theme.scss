@@ -1,5 +1,5 @@
 $fontFamily: 'Lato', 'Roboto', sans-serif;
-$fontColor: #9a9a9a;
+$fontColor: #242424;
 $activeLinkColor: #3273dc;
 
 
@@ -18,10 +18,10 @@ $palettes: (
         'dark': #ded2ef
     ),
     'background': (
-        'base': #2a34d1
+        'base': rgb(63, 81, 181)
     ),
     'mono': (
-        'white': #fff,
+        'white': #fffafa,
         'lighter': #eee,
         'light': #ccc,
         'dark': #333,

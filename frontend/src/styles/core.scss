@@ -21,7 +21,7 @@ body {
 }
 
 body {
-    background: #fff;
+    background-color: palette('background', 'base');
 }
 
 // ? Enable scrollbar styling works only in chrome

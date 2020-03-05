@@ -1,15 +1,20 @@
 import React from "react"
 import { Link } from "gatsby"
+import cx from "classnames"
 import PropTypes from "prop-types"
 
 import { renderSocialIcons } from "../lib/utils"
 import { socialLinksType } from "../lib/propTypes"
 
 const Menu = ({ header, isVisible, closeMenu, social }) => {
+    const navMenuClass = cx("navigation__menu", "animated", {
+        "fadeIn" : isVisible,
+        "fadeOut" : !isVisible
+    })
     return(
         <div 
-            className="navigation__menu"
-            style={{ display: isVisible ? 'block' : 'none' }}
+            style={{ pointerEvents: isVisible ? 'auto' : 'none' }}
+            className={navMenuClass}
             onClick={closeMenu}
         >
             <nav

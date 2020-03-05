@@ -1,0 +1,18 @@
+@import "../../styles//theme";
+@import "../../styles/mixins";
+
+.services{
+    &__container{
+        background: palette('mono', 'white');
+        padding: 0 25px;
+    }
+    &__content{
+        display: flex;
+        flex-direction: column;
+        padding: 25px 0;
+    }
+    &__block{
+        text-align: center;
+        margin: 12px 0;
+    }
+}

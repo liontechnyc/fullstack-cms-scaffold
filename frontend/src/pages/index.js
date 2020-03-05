@@ -1,13 +1,16 @@
 import React from "react"
 import { Link } from "gatsby"
 
+import { scrollTo } from "../lib/utils"
+
 import { 
   Page, 
   Section, 
   SEO
 } from "../components/ui"
 import {
-  Hero
+  Hero,
+  Services
 } from "../components/home"
 
 
@@ -20,15 +23,58 @@ const IndexPage = () => (
     navPlacement="sticky"
   >
     <SEO title="Home" />
-    <Section>
+    <Section>{/* Fullscreen Hero */}
       <Hero
-        subtitle="Leverage agile frameworks to provide a robust synopsis for high level overviews"
-        title="Because we override the digital, you should know about our #startup."
+        bgImage="https://cdn.stocksnap.io/img-thumbs/960w/A0DYKMDRAL.jpg"
+        subtitle="We are the web dev agency"
+        title="Grow your digital business today"
+        alignTitle="right"
+        textColor="#fffafa"
+        invertTitlePlacement
+        fullscreen
       >
-        <a className="link__cta">
-          Start Your Online Business Today
+        <a 
+          onClick={() => scrollTo('.services__container')} 
+          className="btn__link animated fadeInUp delay-2s"
+        >
+          Learn More
         </a>
       </Hero>
+    </Section>
+    <Section>{/* Services */}
+      <Services/>
+    </Section>
+    <Section>{/* Video CTA (Hero) */}
+      <Hero
+        title="10 reasons to get a website"
+        bgColor="#f6f7fe"
+        alignTitle="center"
+        isFlat
+      >
+        <a href="#" className="btn__play">
+          <div className="btn__play--icon">
+            <i className="fas fa-play"/>
+          </div>
+          <div className="btn__play--cta">
+            <h4>Watch Video</h4>
+          </div>
+        </a>
+      </Hero>
+    </Section>
+    <Section>
+      <Hero
+        title="Unleash cross-media timely deliverables"
+      >
+        
+      </Hero>
+      <Section isWide bgColor="#fffafa">
+        <figure className="image__container">
+          <img 
+            src="https://colabrio.ams3.cdn.digitaloceanspaces.com/norebro_landing/demo16/2017/08/dm16__image_09-min.png"
+            srcSet="https://colabrio.ams3.cdn.digitaloceanspaces.com/norebro_landing/demo16/2017/08/dm16__image_09-min.png 349w, https://colabrio.ams3.cdn.digitaloceanspaces.com/norebro_landing/demo16/2017/08/dm16__image_09-min-233x300.png 233w, https://colabrio.ams3.cdn.digitaloceanspaces.com/norebro_landing/demo16/2017/08/dm16__image_09-min-120x155.png 120w"  
+          />
+        </figure>
+      </Section>
     </Section>
   </Page>
 )

@@ -2,20 +2,36 @@ import React from "react"
 import PropTypes from "prop-types"
 import cx from "classnames"
 
-const Section = ({ isNarrow, contentLayout, id, style, children }) => {
-    const contentBlockClass = cx("page__content--block", { 
-        "is-narrow" : isNarrow,
-        "is-horizontal" : contentLayout === 'horizontal',
-        "is-vertical" : contentLayout === 'vertical'
-    })
-    return(
-        <section id={id} className={contentBlockClass} style={style}>
-            { children }
-        </section>
-    )
+const Section = ({ 
+        bgColor, 
+        isNarrow, 
+        contentLayout, 
+        id, 
+        style, 
+        children 
+    }) => {
+        const contentBlockStyle = {
+            backgroundColor: bgColor,
+            ...style
+        }
+        const contentBlockClass = cx("page__content--block", { 
+            "is-narrow" : isNarrow,
+            "is-horizontal" : contentLayout === 'horizontal',
+            "is-vertical" : contentLayout === 'vertical'
+        })
+        return(
+            <section 
+                id={id} 
+                className={contentBlockClass} 
+                style={contentBlockStyle}
+            >
+                { children }
+            </section>
+        )
 }
 
 Section.propTypes = {
+    bgColor: PropTypes.string,
     isNarrow: PropTypes.bool,
     contentLayout: PropTypes.string,
     id: PropTypes.string,
@@ -25,8 +41,9 @@ Section.propTypes = {
 
 Section.defaultProps = {
     contentLayout: 'vertical',
+    bgColor: undefined,
     id: undefined,
-    style: undefined
+    style: {}
 }
 
 export default Section
