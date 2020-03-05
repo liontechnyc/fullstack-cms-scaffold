@@ -6,7 +6,8 @@ import "./hero.scss"
 const Hero = ({ 
         subtitle, 
         title, 
-        alignTitle, 
+        alignTitle,
+        alignFooter, 
         bgColor, 
         bgImage, 
         textColor, 
@@ -25,10 +26,14 @@ const Hero = ({
     }
     const titleStyle = {
         textAlign: alignTitle,
-        order: Number(invertTitlePlacement)
+        order: invertTitlePlacement ? 1 : 0
     }
     const subTitleStyle = {
-        order: Number(!invertTitlePlacement)
+        order: !invertTitlePlacement ? 1 : 0
+    }
+    const footerStyle = {
+        order: 2,
+        justifyContent: alignFooter
     }
     return(
         <div style={containerStyle} className="hero__container">
@@ -39,7 +44,7 @@ const Hero = ({
                 <p style={subTitleStyle} className="hero__content--subtitle">
                     { subtitle }
                 </p>
-                <div style={{ order: 2 }} className="hero__content--footer">
+                <div style={footerStyle} className="hero__content--footer">
                     { children }
                 </div>
             </div>
@@ -51,19 +56,22 @@ Hero.propTypes = {
     subtitle: PropTypes.string,
     title: PropTypes.string,
     alignTitle: PropTypes.string,
+    alignFooter: PropTypes.string,
     bgColor: PropTypes.string,
     bgImage: PropTypes.string,
     textColor: PropTypes.string,
     fullscreen: PropTypes.bool,
     isFlat: PropTypes.bool,
-    invertTitlePlacement: PropTypes.bool,
+    invertTitlePlacement: PropTypes.bool.isRequired,
     children: PropTypes.node
 }
 
 Hero.defaultProps = {
     alignTitle: 'center',
+    alignFooter: 'center',
     bgColor: undefined,
-    bgImage: undefined
+    bgImage: undefined,
+    invertTitlePlacement: false
 }
 
 export default Hero
