@@ -1,0 +1,61 @@
+@import "../../styles//theme";
+
+.tabulation{
+    &__container{
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        max-width: 100%;
+    }
+    &__panel{
+        &--tabs{
+            position: relative;
+            display: inline-flex;
+            flex-direction: row;
+            white-space: nowrap;
+            border-bottom: 1px solid rgba(#000, 0.15);
+            overflow: auto;
+            margin-bottom: -1px;
+            h4{
+                color: rgba($fontColor, 0.8);
+                text-transform: capitalize;
+                padding:  0 1em 0 1em;
+                transition: 1s ease-in-out;
+                font-weight: 600;
+                &.is-active{
+                    color: $fontColor;
+                    font-weight: 800;
+                }
+            }
+        }
+        &--selection-bar{
+            position: absolute;
+            background-color: $activeLinkColor;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            transition: 0.3s cubic-bezier(0.2, 0.35, 0.25, 1);
+        }
+        &--description{
+            margin-top: 8px;
+            p{
+                width: auto;
+                height: 100px;
+                display: none;
+                &.is-active{
+                    display: block;
+                }
+            }
+        }
+        &--cta{
+            flex: 1 0;
+            margin: 1em 0;
+            a{
+                display: none;
+                &.is-active{
+                    display: inline-block;
+                }
+            }
+        }
+    }
+}
