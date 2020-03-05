@@ -28,3 +28,55 @@ solutions:
   - title: 'support'
     description: 'Caerphilly serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am alone, and feel the charm.'
     cta_link: '#'
+
+pricing:
+  - title: 'Personal'
+    subtitle: 'A beautiful, simple website'
+    description: 'Create a cool stunning website'
+    cta_link: '#'
+    price:
+      monthly:
+        cost: 39
+      annually:
+        cost: 500
+    features:
+      - name: 'Responsive'
+        included: true
+      - name: 'Live streaming'
+        included: false
+      - name: 'Adaptive bitrate'
+        included: false
+
+  - title: 'Team'
+    subtitle: 'A beautiful, simple website'
+    description: 'Create a cool stunning website'
+    cta_link: '#'
+    price:
+      monthly:
+        cost: 69
+      annually:
+        cost: 800
+    features:
+      - name: 'Responsive'
+        included: true
+      - name: 'Live streaming'
+        included: true
+      - name: 'Adaptive bitrate'
+        included: false
+  
+  - title: 'Corporate'
+    subtitle: 'A beautiful, simple website'
+    description: 'Create a cool stunning website'
+    cta_link: '#'
+    price:
+      monthly:
+        cost: 96
+      annually:
+        cost: 1000
+    features:
+      - name: 'Responsive'
+        included: true
+      - name: 'Live streaming'
+        included: true
+      - name: 'Adaptive bitrate'
+        included: true

@@ -10,7 +10,8 @@ import {
 } from "../components/ui"
 import {
   Services,
-  Solutions
+  Solutions,
+  Pricing
 } from "../containers"
 
 
@@ -77,6 +78,15 @@ const IndexPage = () => (
           />
         </figure>
       </Section>
+    </Section>
+    <Section>{/* Pricing */}
+      <Hero
+        title="Simple Pricing"
+        subtitle="Your first 30 days are free! - no credit card required"
+        
+      >
+        <Pricing/>
+      </Hero>
     </Section>
   </Page>
 )

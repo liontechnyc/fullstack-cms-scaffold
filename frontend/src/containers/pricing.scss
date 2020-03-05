@@ -1,0 +1,104 @@
+@import "../styles/theme";
+
+$containerBgColor: #f6f7fe ;
+$borderStyle: 1px solid darken($containerBgColor, 4);
+
+.pricing{
+    &__container{
+        text-align: center;
+    }
+    &__package{
+        &--container{
+            position: relative;
+            border-radius: 8px;
+            background-color: $containerBgColor;
+            padding: 16px 64px 16px 64px;
+            margin: 12px 0;
+            width: 100%;
+            header{
+                h3{
+                    margin: 10px 0 0;
+                    font-size: 20px;
+                    line-height: 1.4;
+                    text-transform: capitalize;
+                }
+                p{
+                    color: $activeLinkColor;
+                    margin-top: 5px;
+                    font-size: 14px;
+                    line-height: 1.5;
+                    letter-spacing: -0.01em;
+                    font-weight: 400;
+                }
+            }
+        }
+        &--price{
+            h2{
+                position: relative;    
+                display: inline-block;
+                font-size: 50px;
+                line-height: 50px;
+                margin: 0;
+                letter-spacing: -0.02em;
+                .icon{
+                    position: absolute;
+                    left: -22px;
+                    top: 5px;
+                    line-height: 25px;
+                    font-size: 25px;
+                }
+            }
+            hr{
+                border: $borderStyle;
+                margin: 16px auto;
+                width: 128px;
+            }
+        }
+        &--frequency{
+            display: inline-block;
+            background-color: #e5e8fe;
+            color: rgba($fontColor, 0.8);
+            margin: 8px 0 16px 0;
+            padding: 8px 14px 6px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 10.6px;
+            text-transform: uppercase;
+        }
+        &--description{
+            color: rgba($fontColor, 0.65);
+            margin: 0;
+            line-height: 1.5;
+            letter-spacing: -0.01em;
+            font-weight: 400;
+        }
+        &--features{
+            list-style: none;
+            padding: 0;
+            margin: 16px 0;
+            li{
+                position: relative;
+                padding: 16px 0;
+                font-weight: 500;
+                font-size: 13.6px;
+                border-bottom: $borderStyle;
+                color: $activeLinkColor;
+                .far{
+                    position: relative;
+                    padding-right: 16px;
+                }
+                &:first-child{
+                    border-top: $borderStyle;
+                }
+                &.is-disabled{
+                    color: rgba($fontColor, 0.65);
+                }
+            }
+        }
+        &--cta{
+            position: relative;
+            margin: 32px 0;
+            padding: 16px 0 0;
+        }
+    }
+}
