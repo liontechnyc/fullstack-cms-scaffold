@@ -1,7 +1,8 @@
-@import "../styles/theme";
-@import "../styles/mixins";
+@import "../../styles/theme";
+@import "../../styles/mixins";
 
 $linkSpacing: 1em;
+$menuOverlayLayer: 200;
 
 .navigation{
     &__header{
@@ -72,14 +73,13 @@ $linkSpacing: 1em;
         }
     }
     &__menu{
-        @include overlay($mode: fixed, $layer: 200);
+        @include overlay($mode: fixed, $layer: $menuOverlayLayer);
         background-color: palette-alpha('background', 'base', 0.8);
-        opacity: 0;
         &--container{
             position: absolute;
             display: flex;
             height: 100vh;
-            width: 100vw;       
+            width: 100vw;   
         }
         &--close{
             text-align: center;
