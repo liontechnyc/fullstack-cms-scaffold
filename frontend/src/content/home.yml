@@ -1,17 +1,30 @@
 
 services:
-  - title: 'Service A'
-    description: 'Subtitle A'
-    icon: ''
+  - title: 'Workflow Automation'
+    description: 'Capitalize on low hanging fruit to identify a ballpark added activity to beta test.'
+    icon: 'https://colabrio.ams3.cdn.digitaloceanspaces.com/norebro_landing/demo16/2017/08/dm16__image_01-min.png'
 
-  - title: 'Service B'
-    description: 'Subtitle B'
-    icon: ''
+  - title: 'Stages Processing'
+    description: 'Podcasting operational change management inside of flows to establish a framework.'
+    icon: 'https://colabrio.ams3.cdn.digitaloceanspaces.com/norebro_landing/demo16/2017/08/dm16__image_02-min.png'
   
-  - title: 'Service C'
-    description: 'Subtitle C'
-    icon: ''
+  - title: 'Adaptive Interface'
+    description: 'Collaboratively administrate empowered markets via plug-and-play networks.'
+    icon: 'https://colabrio.ams3.cdn.digitaloceanspaces.com/norebro_landing/demo16/2017/08/dm16__image_03-min.png'
+
+solutions:
+  - title: 'concept'
+    description: 'A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am alone, and feel the charm.'
+    cta_link: '#'  
   
-  - title: 'Service D'
-    description: 'Subtitle D'
-    icon: ''
+  - title: 'design'
+    description: 'Caerphilly serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am alone, and feel the charm.'
+    cta_link: '#'
+  
+  - title: 'deployment'
+    cta_link: '#'
+    description: 'A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am alone, and feel the charm.'
+  
+  - title: 'support'
+    description: 'Caerphilly serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am alone, and feel the charm.'
+    cta_link: '#'
