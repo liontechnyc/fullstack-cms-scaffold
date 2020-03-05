@@ -55,8 +55,8 @@ const Hero = ({
 Hero.propTypes = {
     subtitle: PropTypes.string,
     title: PropTypes.string,
-    alignTitle: PropTypes.string,
-    alignFooter: PropTypes.string,
+    alignTitle: PropTypes.oneOf(['left', 'center', 'right' ]),
+    alignFooter: PropTypes.oneOf([ 'left', 'center', 'right' ]),
     bgColor: PropTypes.string,
     bgImage: PropTypes.string,
     textColor: PropTypes.string,
