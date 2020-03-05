@@ -1,8 +1,10 @@
 import React from "react"
 import { ApolloProvider } from "@apollo/react-hooks"
 import { ModalRoutingContext } from "gatsby-plugin-modal-routing"
+import cx from "classnames"
 
 import client from "./apollo/client"
+import useScrollToTop from "../hooks/use-scroll-to-top"
 
 /**
  * ? Allows modal to render as page for SEO and navigation purposes,
@@ -29,3 +31,33 @@ export const withApolloClient = Component => props => {
     )
 }
 
+/**
+ * ? HOC to wrap scroll to top component
+ */
+export const withScrollToTop = Component => props => {
+    const isVisible = useScrollToTop()
+
+    const containerClass = cx("btn__link", "animated", "faster", {
+        fadeIn : isVisible,
+        fadeOut: !isVisible,
+    })
+    const containerStyle = {
+        position: 'fixed',
+        bottom: 24,
+        right: 24,
+        margin: 0,
+        zIndex: 800
+    }
+    return(
+        <>
+            <Component {...props}/>
+            <a 
+                className={containerClass} 
+                style={containerStyle}
+                onClick={() => window.scrollTo(0, 0)}
+            >
+                <i className="fas fa-angle-double-up"/>
+            </a>
+        </>
+    )
+}

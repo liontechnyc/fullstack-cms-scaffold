@@ -29,3 +29,15 @@ export function renderSocialIcons(social){
 export function fromCDN(url){
     return process.env.NODE_ENV === 'production' ? url : process.env.GATSBY_STRAPI_URI + url
 }
+
+/**
+ * Scroll element into page view smoothly
+ * @param {string} query - Query selector for target element 
+ */
+export function scrollTo(query){
+    document.querySelector(query).scrollIntoView({
+        block: 'start',
+        inline: 'nearest',
+        behavior: 'smooth'
+    })
+}

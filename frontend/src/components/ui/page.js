@@ -1,14 +1,17 @@
-import React, { useState } from "react"
+import React  from "react"
 import PropTypes from "prop-types"
 import cx from "classnames"
+import flow from "lodash/flow"
 
-import { withApolloClient } from "../../lib/ui"
+import { withApolloClient, withScrollToTop } from "../../lib/ui"
+
 import { 
   containerLayoutType,
   navJustificationType
  } from "../../lib/propTypes"
-import useSiteMenu from "../../hooks/use-site-menu"
- import useSiteMetadata from "../../hooks/use-site-metadata"
+
+ import useSiteMenu from "../../hooks/use-site-menu"
+import useSiteMetadata from "../../hooks/use-site-metadata"
 
 import Navigation from "../navigation"
 import Menu from "../menu"
@@ -76,7 +79,7 @@ const Page = ({
           />
         </div>
         <Menu
-          header={author}
+          header={title}
           closeMenu={() => setMenuVisibility(false)}
           isVisible={menuIsVisible}
           social={social}
@@ -117,4 +120,4 @@ Page.defaultProps = {
   fluidNav: true
 }
 
-export default withApolloClient(Page)
+export default flow(withApolloClient, withScrollToTop)(Page)
