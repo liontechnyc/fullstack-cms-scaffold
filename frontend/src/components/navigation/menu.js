@@ -3,8 +3,8 @@ import { Link } from "gatsby"
 import cx from "classnames"
 import PropTypes from "prop-types"
 
-import { renderSocialIcons } from "../lib/utils"
-import { socialLinksType } from "../lib/propTypes"
+import { renderSocialIcons } from "../../lib/utils"
+import { socialLinksType } from "../../lib/propTypes"
 
 const Menu = ({ header, isVisible, closeMenu, social }) => {
     const navMenuClass = cx("navigation__menu", "animated", {
@@ -35,7 +35,7 @@ const Menu = ({ header, isVisible, closeMenu, social }) => {
                     </div>
                     <footer>
                         <span>
-                            © {new Date().getFullYear()}&nbsp; Sankofa Theme&nbsp; | &nbsp;Adinkra Series
+                            © {new Date().getFullYear()}&nbsp; Nyame Theme&nbsp; | &nbsp;Adinkra Series
                         </span>
                         <br/>
                         <span>

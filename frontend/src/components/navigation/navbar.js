@@ -3,11 +3,11 @@ import { Link } from "gatsby"
 import cx from "classnames"
 import PropTypes from "prop-types"
 
-import { renderSocialIcons } from "../lib/utils"
+import { renderSocialIcons } from "../../lib/utils"
 import {
     navJustificationType, 
     socialLinksType
- } from "../lib/propTypes"
+ } from "../../lib/propTypes"
 
 import "./navigation.scss"
 

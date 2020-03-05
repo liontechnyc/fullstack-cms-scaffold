@@ -10,11 +10,13 @@ import {
   navJustificationType
  } from "../../lib/propTypes"
 
- import useSiteMenu from "../../hooks/use-site-menu"
+import useSiteMenu from "../../hooks/use-site-menu"
 import useSiteMetadata from "../../hooks/use-site-metadata"
 
-import Navigation from "../navigation"
-import Menu from "../menu"
+import {
+  Navbar,
+  Menu
+} from "../navigation"
 
 import "./page.scss"
 
@@ -70,7 +72,7 @@ const Page = ({
       {/* Navigation */}
       <nav className={navigationClass}>
         <div className={navigationContainerClass}>
-          <Navigation
+          <Navbar
             header={title}
             social={social}
             openMenu={() => setMenuVisibility(true)}
