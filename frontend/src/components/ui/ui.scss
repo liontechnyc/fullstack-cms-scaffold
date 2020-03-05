@@ -1,0 +1,125 @@
+@import "../../styles/theme";
+@import "../../styles/mixins";
+
+/* Parameters for image scaling */
+$dimensions: 16 24 32 48 64 96 128 !default;
+$imgRadiusRounded: 8px;
+
+.btn{
+    &__link{
+        background-image: linear-gradient(120deg, rgba(#f093fb, 0.9) 0%, rgba(#f5576c, 1) 100%);
+        padding: 1em 1.5em;
+        border-style: solid;
+        border-width: 0px 2px 2px 3px;
+        border-left-color: palette-alpha('mono', 'white', 0.3);
+        border-right-color: palette-alpha('mono', 'white', 0.6);
+        border-bottom-color: palette-alpha('mono', 'white', 0.6);
+        border-radius: 999px;
+        color: rgba(#fff, 0.9);
+        text-decoration: none;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-weight: 500;
+        @include boxshadow(12);
+        @include mobile{
+            padding: 1em 1em;
+        }
+        transition: ease-in-out 256ms;
+        &:hover{
+            transform: scale(1.1);
+            font-weight: 700;
+            cursor: pointer;
+        }
+        &:active{
+            color: rgba(#fff, 0.5);
+        }
+        &:visited{
+            color: rgba(#fff, 0.5);
+            font-weight: 600;
+        }
+    }
+    &__icon{
+
+    }
+    &__play{
+        text-decoration: none;
+        width: auto;
+        display: inline-block;
+        cursor: pointer;
+        margin: 32px 0;
+        &--icon{
+            display: inline-block;
+            position: absolute;
+            top: 50%;
+            left: 0;
+            color: #fff;
+            background-color: $activeLinkColor;
+            border-color: $activeLinkColor;
+            border: 1px solid;
+            border-radius: 50px;
+            text-align: center;
+            line-height: 60px;
+            font-size: 27px;
+            margin-top: -30px;
+            width: 60px;
+            height: 60px;
+            z-index: 5;
+            transition: ease-in-out .15s;
+            .fa-play{
+                margin-left: 5px;
+            }
+            @include pulsing-border($duration: 2s);
+            &::before, &::after{
+                border-color: $activeLinkColor;
+                border-radius: 50px;
+            }
+        }
+        &--cta{
+            padding: calc(1em - 4px);
+            padding-left: 40px;
+            padding-right: 20px;
+            margin-left: 30px;
+            border-radius: 30px;
+            border: 1px solid $activeLinkColor;
+            border-left-width: 0;
+            h4{
+                font-weight: 600;
+                margin: 0;
+                font-size: 14px;
+            }
+        }
+        &:active{
+            color: rgba($activeLinkColor, 0.5);
+        }
+        &:visited{
+            color: rgba($fontColor, 0.5);
+            font-weight: 700;
+        }
+    }
+}
+
+
+
+.image{
+    &__container{
+        display: block;
+        position: relative;
+        &.is-fluid{
+            width: 100%;
+        }
+        img{
+            display: block;
+            height: auto;
+            width: 100%;
+            &.is-rounded{
+                border-radius: $imgRadiusRounded;
+            }
+            @each $dimension in $dimensions{
+                &.is-#{$dimension}x#{$dimension}{
+                    height: $dimension * 1px;
+                    width: $dimension * 1px;
+                }
+            }
+        }
+    }
+}
