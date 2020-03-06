@@ -1,4 +1,5 @@
 @import "../../styles/theme";
+@import "../../styles/mixins";
 
 $inputMargin: 32px;
 
@@ -7,6 +8,10 @@ $inputMargin: 32px;
         display: flex;
         width: 100%;
         justify-content: space-between;
+        margin: 0 auto;
+        @include desktop{
+            max-width: 50vw;
+        }
         input:not([ type="submit" ]){
             transition: border-color .5s ease-out;
             &, &:focus{

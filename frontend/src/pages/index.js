@@ -86,7 +86,6 @@ const IndexPage = () => (
       <Hero
         title="Simple Pricing"
         subtitle="Your first 30 days are free! - no credit card required"
-        
       >
         <Pricing/>
       </Hero>
@@ -96,7 +95,7 @@ const IndexPage = () => (
       bgColor="#f6f7fe" 
       style={{ padding: `60px 25px 60px 25px` }}
     >
-      <header>
+      <header className="email__subscription--header">
         <h3>Be the first to know</h3>
         <p>
           <b>Your first 30 days are free!</b>

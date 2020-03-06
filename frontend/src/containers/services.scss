@@ -8,8 +8,15 @@
     }
     &__content{
         display: flex;
-        flex-direction: column;
         padding: 25px 0;
+        flex-direction: row;
+        @include desktop{
+            width: calc(100% - 64px);
+            margin: 0 auto;
+        }
+        @include mobile{
+            flex-direction: column;
+        }
     }
     &__block{
         text-align: center;
