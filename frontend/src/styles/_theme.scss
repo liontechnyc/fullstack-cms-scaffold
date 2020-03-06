@@ -2,7 +2,6 @@ $fontFamily: 'Lato', 'Roboto', sans-serif;
 $fontColor: #242424;
 $activeLinkColor: #3273dc;
 
-
 $palettes: (
     'primary': (
         'base': #525aff,
@@ -18,15 +17,21 @@ $palettes: (
         'dark': #ded2ef
     ),
     'background': (
-        'base': rgb(63, 81, 181)
+        'base': #303030,
     ),
     'mono': (
         'white': #fffafa,
         'lighter': #eee,
         'light': #ccc,
-        'dark': #333,
-        'darker': #111,
+        'dark': #555,
+        'darker': #333,
         'black': #000
+    ),
+    'status': (
+        'success': #acd8aa,
+        'warning': #fff7ae,
+        'info': #79addc,
+        'error': #E78F8E, 
     )
 );
 
