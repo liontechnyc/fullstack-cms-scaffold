@@ -1,0 +1,49 @@
+@import "../../styles/theme";
+
+$inputMargin: 32px;
+
+.form{
+    &__container{
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        input:not([ type="submit" ]){
+            transition: border-color .5s ease-out;
+            &, &:focus{
+                outline: 0;
+                border-top: none;
+                border-left: none;
+                border-right: none;
+                border-bottom: 1px solid;
+                border-bottom-color: palette('status', 'info');
+            }
+            &:optional{
+                border-bottom-color: palette-alpha('status', 'info', 0.7);
+            }
+            &:required{
+                border-bottom-color: palette('status', 'warning');
+            }
+            &:valid, &:valid:focus{
+                border-bottom-color: palette('status', 'success');
+            }
+            &:invalid, &:invalid:focus{
+                border-bottom-color: palette('status', 'error');
+            }
+        }
+    }
+    &__input{
+        background: transparent;
+        color: rgba($fontColor, 0.7);
+        width: calc(75% - #{$inputMargin});
+        padding: 16px 0px;
+        letter-spacing: 1px;
+    }
+    &__submit{
+        border: none;
+        width: calc(25% * 1px);
+        color: palette('mono', 'white');
+        background-color: palette('mono', 'black');
+        padding: 0 16px;
+        border-radius: 50px;
+    }
+}

@@ -13,7 +13,9 @@ import {
   Solutions,
   Pricing
 } from "../containers"
-
+import {
+  EmailLeadSubscriptionForm
+} from "../containers/forms"
 
 const IndexPage = () => (
   <Page
@@ -87,6 +89,16 @@ const IndexPage = () => (
       >
         <Pricing/>
       </Hero>
+    </Section>
+    <Section bgColor="#f6f7fe" style={{ padding: `60px 25px 60px 25px` }}>{/* Newsletter Subscription */}
+      <header>
+        <h3>Be the first to know</h3>
+        <p>
+          <b>Your first 30 days are free!</b>
+          - no credit card required &nbsp; {`👍`}
+        </p>
+      </header>
+      <EmailLeadSubscriptionForm/>
     </Section>
   </Page>
 )
