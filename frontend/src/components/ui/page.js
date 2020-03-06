@@ -13,6 +13,7 @@ import {
 import useSiteMenu from "../../hooks/use-site-menu"
 import useSiteMetadata from "../../hooks/use-site-metadata"
 
+import Footer from "./footer"
 import {
   Navbar,
   Menu
@@ -94,12 +95,9 @@ const Page = ({
           { children } {/* Page content */}
         </main>
         {/* Footer */}
-        <footer className={footerClass}>
-          {/* Footer content */}
-          © {new Date().getFullYear()} &nbsp; 
-          Built with &nbsp;{`💖`} &nbsp;by &nbsp;
-          <a href="https://www.liontech.nyc">Lion Tech NYC</a>
-        </footer>
+        <section className={footerClass}>
+          <Footer/>
+        </section>
       </div>
     </div>
   )

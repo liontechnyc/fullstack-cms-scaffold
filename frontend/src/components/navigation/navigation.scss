@@ -113,22 +113,6 @@ $menuOverlayLayer: 200;
                     margin: 2em 0;
                 }
             }
-            footer{
-                span{
-                    line-height: 2;
-                    font-size: 16px;
-                    opacity: 0.7;
-                    font-weight: 500;
-                    @include mobile{
-                        font-size: calc(16px - 1em/4);
-                    }
-                }
-                .fab{
-                    font-size: 30px;
-                    margin-top: 1em;
-                    margin-right: 1em;
-                }
-            }
         }
         &--list-items{
             flex: 1 0;

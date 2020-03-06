@@ -84,11 +84,11 @@
      * ? Structures footer content within page layout
     */
     &__footer{
-        position: relative;
-        flex: 0 1;
-        padding: 4em;
-        &.is-hidden{
-            display: none;
-        }
-    }
+         position: relative;
+         flex: 0 1;
+         padding: 16px 24px;
+         &.is-hidden{
+             display: none;
+         }
+     }
 }
