@@ -4,9 +4,6 @@
 .hero{
     &__container{
         display: flex;
-        border-style: solid;
-        border-width: 1px 3px 1px 3px;
-        border-color: palette('mono', 'white');
         background-color: palette('mono', 'white');
         background-position-x: center;
         background-attachment: fixed;

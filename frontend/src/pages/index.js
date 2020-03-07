@@ -31,7 +31,7 @@ const IndexPage = () => (
     <SEO title="Home" />
     <Section>{/* Fullscreen Hero */}
       <Hero
-        bgImage="https://cdn.stocksnap.io/img-thumbs/960w/A0DYKMDRAL.jpg"
+        bgImage="https://cdn.stocksnap.io/img-thumbs/960w/L7SIUD5VN5.jpg"//"https://cdn.stocksnap.io/img-thumbs/960w/A0DYKMDRAL.jpg"
         subtitle="We are the web dev agency"
         title="Grow your digital business today"
         alignTitle="right"
