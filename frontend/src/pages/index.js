@@ -18,6 +18,8 @@ import {
   EmailLeadSubscriptionForm
 } from "../containers/forms"
 
+import "./index.scss"
+
 const IndexPage = () => (
   <Page
     pageLayout="vertical"
@@ -65,7 +67,7 @@ const IndexPage = () => (
         </a>
       </Hero>
     </Section>
-    <Section>{/* Solutions  */}
+    <Section id="home__section--solutions">{/* Solutions  */}
       <Hero
         title="Unleash cross-media timely deliverables"
         alignTitle="left"
@@ -92,8 +94,8 @@ const IndexPage = () => (
     </Section>
     {/* Newsletter Subscription */}
     <Section
+      id="home__section--subscription"
       bgColor="#f6f7fe" 
-      style={{ padding: `60px 25px 60px 25px` }}
     >
       <header className="email__subscription--header">
         <h3>Be the first to know</h3>

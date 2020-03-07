@@ -5,21 +5,49 @@
     &__container{
         background: palette('mono', 'white');
         padding: 0 25px;
+        @include desktop{
+            padding: 0 64px;
+        }
     }
     &__content{
         display: flex;
         padding: 25px 0;
         flex-direction: row;
+        justify-content: center;
         @include desktop{
-            width: calc(100% - 64px);
-            margin: 0 auto;
+            font-size: 14px;
+            
+        }
+        @include tablet{
+            font-size: 12px;
         }
         @include mobile{
             flex-direction: column;
         }
     }
     &__block{
+        display: flex;
         text-align: center;
-        margin: 12px 0;
+        margin: 16px 0;
+        justify-content: center;
+        flex-direction: column;
+        &--icon{
+            margin: 0 auto;
+        }
+        h3{
+            font-size: 14px;
+        }
+        p{
+            margin: 0 auto;
+            @include desktop{
+                width: 50%;
+            }
+            @include tablet{
+                width: (75% + 50%) / 2;
+            }
+            @include mobile{
+                width: 75%;
+            }
+        }
     }
 }

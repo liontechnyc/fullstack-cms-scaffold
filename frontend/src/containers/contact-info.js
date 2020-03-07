@@ -24,15 +24,15 @@ const ContactInfo = () => {
                 { contact.title }
             </h3>
             <ul className="contact__info--list">
-                <li clasName="contact__info--item">
+                <li className="contact__info--item">
                     <i className="fas fa-mobile"/>
                     { contact.phone }
                 </li>
-                <li clasName="contact__info--item">
+                <li className="contact__info--item">
                     <i className="fas fa-envelope-square"/>
                     { contact.email }
                 </li>
-                <li clasName="contact__info--item">
+                <li className="contact__info--item">
                     <i className="fas fa-walking"/>
                     { contact.location }
                 </li>

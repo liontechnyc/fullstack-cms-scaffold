@@ -1,0 +1,80 @@
+@import "../styles/mixins";
+
+#home{
+    &__section{
+        &--solutions{
+            @include desktop{
+                flex-direction: row;
+                .hero{
+                    &__container{
+                        width: 60vw;
+                        padding: 0 64px;
+                    }
+                    &__content{
+                        &--title{
+                            flex: 0 1;
+                            margin-bottom: 0;
+                        }
+                        &--footer{
+                            flex: 0 1;
+                            .tabulation__panel--cta{
+                                margin-top: 64px;
+                            }
+                        }
+                    }
+                }
+                figure.image__container{
+                    padding: 4em;
+                }
+            }
+            @include tablet{
+                flex-direction: column;
+                .hero{
+                    &__container{
+                        padding: 0 32px;
+                    }
+                    &__content{
+                        &--title{
+                            flex: 0 1;
+                            margin-bottom: 0;
+                        }
+                        &--footer{
+                            flex: 0 1;
+                            .tabulation__panel--cta{
+                                margin-top: 32px;
+                            }
+                        }
+                    }
+                }
+                figure.image__container{
+                    padding: 4em;
+                }
+            }
+        }
+        &--subscription{
+            padding: 60px 25px 60px 25px;
+            header{
+                display: inline-block;
+                margin: 0 auto;
+            }
+            @include desktop{
+                form{
+                    margin-top: 64px;
+                    width: 75%;
+                }
+            }
+            @include tablet{
+                form{
+                    margin-top: 32px;
+                    width: 75%;
+                }
+            }
+            @include mobile{
+                form{
+                    margin-top: 16px;
+                    width: calc(100% - 16px);
+                }
+            }
+        }
+    }
+}

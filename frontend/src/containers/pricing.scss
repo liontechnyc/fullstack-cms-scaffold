@@ -1,4 +1,5 @@
 @import "../styles/theme";
+@import "../styles/mixins";
 
 $containerBgColor: #f6f7fe ;
 $borderStyle: 1px solid darken($containerBgColor, 4);
@@ -6,6 +7,10 @@ $borderStyle: 1px solid darken($containerBgColor, 4);
 .pricing{
     &__container{
         text-align: center;
+        @include desktop{
+            display: flex;
+            justify-content: space-between;
+        }
     }
     &__package{
         &--container{
@@ -15,6 +20,9 @@ $borderStyle: 1px solid darken($containerBgColor, 4);
             padding: 16px 64px 16px 64px;
             margin: 12px 0;
             width: 100%;
+            @include desktop{
+                margin: 12px;
+            }
             header{
                 h3{
                     margin: 10px 0 0;

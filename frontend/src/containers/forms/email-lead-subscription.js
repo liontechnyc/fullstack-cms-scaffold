@@ -1,6 +1,5 @@
 import React from "react"
 
-
 const EmailLeadSubscription = () => {
     return(
         <form className="form__container">

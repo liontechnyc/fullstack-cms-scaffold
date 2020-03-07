@@ -22,8 +22,8 @@ const Services = () => {
             <div className="services__content">
                 { services.map((content, id) => (
                     <div key={`${id}`} className="services__block">
-                        <figure className="services__block--icon">
-                            <img src={ content.icon }/>
+                        <figure className="services__block--icon image__container">
+                            <img className="is-64x64" src={ content.icon }/>
                         </figure>
                         <h3>{ content.title }</h3>
                         <p>{ content.description }</p>
