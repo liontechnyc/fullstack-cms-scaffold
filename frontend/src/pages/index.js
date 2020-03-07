@@ -32,8 +32,8 @@ const IndexPage = () => (
     <Section id="home__section--hero">{/* Fullscreen Hero */}
       <Hero
         bgImage="https://cdn.stocksnap.io/img-thumbs/960w/FXUKMM5OVS.jpg"
-        subtitle="We are the web dev agency"
-        title="Grow your digital business today"
+        subtitle="Without breaking the bank"
+        title="Take your business to the next level"
         alignTitle="right"
         invertTitlePlacement
         fullscreen

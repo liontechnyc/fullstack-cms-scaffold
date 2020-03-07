@@ -45,9 +45,11 @@ const Hero = ({
                 <h3 style={titleStyle} className="hero__content--title">
                     { title }
                 </h3>
-                <p style={subTitleStyle} className="hero__content--subtitle">
-                    { subtitle }
-                </p>
+                <p 
+                    style={subTitleStyle} 
+                    className="hero__content--subtitle"
+                    dangerouslySetInnerHTML={{ __html : subtitle }}
+                />
                 <div style={footerStyle} className="hero__content--footer">
                     { children }
                 </div>
