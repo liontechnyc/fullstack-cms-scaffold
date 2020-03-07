@@ -25,7 +25,9 @@ const Navigation = ({ header, pageLayout, navJustification, openMenu, social }) 
     return(
         <>
             <header className="navigation__header">
-                <strong>{ header }</strong>
+                <Link to="/">
+                    <strong>{ header }</strong>
+                </Link>
             </header>
             <div className={contentClass}>
                 <div className="navigation__content--container">

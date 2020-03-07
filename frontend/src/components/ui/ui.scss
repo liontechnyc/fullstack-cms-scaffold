@@ -115,8 +115,6 @@ $imgRadiusRounded: 8px;
     }
 }
 
-
-
 .image{
     &__container{
         display: block;
@@ -141,6 +139,29 @@ $imgRadiusRounded: 8px;
                     width: $dimension * 1px;
                 }
             }
+        }
+    }
+}
+
+.cookies__alert{
+    background-color: palette('mono', 'darker');
+    color: palette-alpha('mono', 'white', 0.9);
+    line-height: 2;
+    font-size: 14px;
+    padding: 0.75rem;
+    div{
+        *{
+            margin-right: 24px;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 8px;
+        }
+        button{
+            color: palette('mono', 'darker');
+            background-color: palette('mono', 'white');
+        }
+        a{
+            background-color: $activeLinkColor;
         }
     }
 }

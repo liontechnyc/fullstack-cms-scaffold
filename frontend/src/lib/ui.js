@@ -1,10 +1,13 @@
 import React from "react"
+import { Link } from "gatsby"
 import { ApolloProvider } from "@apollo/react-hooks"
 import { ModalRoutingContext } from "gatsby-plugin-modal-routing"
 import cx from "classnames"
 
 import client from "./apollo/client"
 import useScrollToTop from "../hooks/use-scroll-to-top"
+import "../hooks/use-cookie-consent"
+import useCookieConsent from "../hooks/use-cookie-consent"
 
 /**
  * ? Allows modal to render as page for SEO and navigation purposes,
@@ -58,6 +61,46 @@ export const withScrollToTop = Component => props => {
             >
                 <i className="fas fa-angle-double-up"/>
             </a>
+        </>
+    )
+}
+
+export const withCookiesAlert = Component => props => {
+    const { hasConsent, setConsent } = useCookieConsent()
+    const containerClass = cx("cookies__alert", "animated", {
+        "slideInUp" : !hasConsent
+    })
+    const containerStyle = {
+        display: hasConsent ? 'none' : undefined,
+        position: 'fixed',
+        bottom: 0,
+        left: 0,
+        right: 0,
+        zIndex: 900
+    }
+    return(
+        <>
+            <Component {...props}/>
+            <div
+                className={containerClass}
+                style={containerStyle}
+            >
+                <h3>Why do we use <b>cookies</b></h3>
+                <p>
+                    We use cookies and similar technology to <b>recognize your repeat visits and preferences</b>, as well as to
+                    <b>measure the effectiveness of campaigns and analyze traffic</b>. To learn more about about cookies,
+                    view our Cookies Policy. By clicking 'I Accept', or using our site, you have consent to the use of cookies
+                    unless you have disabled them. 
+                </p>
+                <div>
+                    <button
+                        onClick={() => setConsent(true)}
+                    >
+                        I Accept
+                    </button>
+                    <Link to="/cookies">Learn More</Link>
+                </div>
+            </div>
         </>
     )
 }

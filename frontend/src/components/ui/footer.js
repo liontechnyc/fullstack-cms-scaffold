@@ -1,4 +1,5 @@
 import React from "react"
+import { Link } from "gatsby"
 import PropTypes from "prop-types"
 
 
@@ -11,16 +12,21 @@ const Footer = ({ social }) => {
     return (
         <footer className="page__footer--container">
             <span>
-                © {new Date().getFullYear()}&nbsp; Nyame Theme&nbsp; | &nbsp;Adinkra Series
+                © {new Date().getFullYear()}&nbsp; 
+                Nyame Theme
+                &nbsp; | &nbsp;
+                Adinkra Series
             </span>
             <br/>
             <span>
                 Built with &nbsp;{`💖`} &nbsp;by &nbsp;
-                <a target="_BLANK" href="https://www.liontech.nyc">Lion Tech NYC</a>
+                <Link to="/">Lion Tech NYC</Link>
             </span>
             <br/>
             <span>
-                <a href="#">Privacy Policy</a>&nbsp; | &nbsp;<a href="#">Cookies Policy</a>
+                <Link to="/privacy">Privacy Policy</Link>
+                &nbsp; | &nbsp;
+                <Link to="/cookies">Cookies Policy</Link>
             </span>
             <br/>
             <span>

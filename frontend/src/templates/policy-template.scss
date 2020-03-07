@@ -1,0 +1,18 @@
+@import "../styles/mixins";
+
+.policy{
+    &__container{
+        @include desktop{
+            margin: 0 8em;
+        }
+        @include tablet{
+            margin: 0 4em;
+        }
+        @include mobile{
+            margin: 0 2em;
+        }
+        &--content{
+
+        }
+    }
+}

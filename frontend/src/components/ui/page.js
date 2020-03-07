@@ -3,7 +3,11 @@ import PropTypes from "prop-types"
 import cx from "classnames"
 import flow from "lodash/flow"
 
-import { withApolloClient, withScrollToTop } from "../../lib/ui"
+import { 
+  withApolloClient, 
+  withScrollToTop,
+  withCookiesAlert
+} from "../../lib/ui"
 
 import { 
   containerLayoutType,
@@ -120,4 +124,4 @@ Page.defaultProps = {
   fluidNav: true
 }
 
-export default flow(withApolloClient, withScrollToTop)(Page)
+export default flow(withApolloClient, withScrollToTop, withCookiesAlert)(Page)

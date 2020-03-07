@@ -12,11 +12,19 @@ module.exports = {
     `gatsby-plugin-graphql-loader`,
     `gatsby-plugin-react-helmet`,
     `gatsby-transformer-yaml`,
+    `gatsby-transformer-remark`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `content`,
         path: `${__dirname}/src/content`
+      }
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `markdown`,
+        path: `${__dirname}/src/markdown`
       }
     },
     {

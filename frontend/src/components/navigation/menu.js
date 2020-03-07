@@ -31,8 +31,6 @@ const Menu = ({ header, isVisible, closeMenu, social }) => {
                     </header>
                     <div className="navigation__menu--list-items">
                         <Link to="/">Home</Link>
-                        <Link to="/">Link A</Link>
-                        <Link to="/">Link B</Link>
                     </div>
                     <Footer social={social}/>
                 </div>
