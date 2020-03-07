@@ -1,87 +1,99 @@
 contact:
-  title: 'LionTechNYC'
-  phone: '+1 347 766 2999'
-  email: 'info@liontech.nyc'
-  location: 'Brooklyn, NY'
+  title: LionTechNYC
+  phone: +1 347 766 2999
+  email: info@liontech.nyc
+  location: Brooklyn, NY
 
 services:
-  - title: 'Workflow Automation'
-    description: 'Capitalize on low hanging fruit to identify a ballpark added activity to beta test.'
-    icon: 'https://colabrio.ams3.cdn.digitaloceanspaces.com/norebro_landing/demo16/2017/08/dm16__image_01-min.png'
+  - title: Providing Shared Values
+    description: Capitalize on low hanging fruit to identify a ballpark added activity to beta test.
+    icon: https://colabrio.ams3.cdn.digitaloceanspaces.com/norebro_landing/demo16/2017/08/dm16__image_01-min.png
 
-  - title: 'Stages Processing'
-    description: 'Podcasting operational change management inside of flows to establish a framework.'
-    icon: 'https://colabrio.ams3.cdn.digitaloceanspaces.com/norebro_landing/demo16/2017/08/dm16__image_02-min.png'
+  - title: Cutting Edge App Dev
+    description: Podcasting operational change management inside of flows to establish a framework.
+    icon: https://colabrio.ams3.cdn.digitaloceanspaces.com/norebro_landing/demo16/2017/08/dm16__image_02-min.png
   
-  - title: 'Adaptive Interface'
-    description: 'Collaboratively administrate empowered markets via plug-and-play networks.'
-    icon: 'https://colabrio.ams3.cdn.digitaloceanspaces.com/norebro_landing/demo16/2017/08/dm16__image_03-min.png'
+  - title: Growing Your Business
+    description: We actively communicate with you. With monthly consultation we ensure the success of your marketing goals.
+    icon: https://colabrio.ams3.cdn.digitaloceanspaces.com/norebro_landing/demo16/2017/08/dm16__image_03-min.png
 
 solutions:
-  - title: 'concept'
-    description: 'A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am alone, and feel the charm.'
-    cta_link: '#'  
+  - title: web development
+    description: Learn how we craft our sites to exactly meet your brand's marketing goals.
+    cta_link: /  
   
-  - title: 'design'
-    description: 'Caerphilly serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am alone, and feel the charm.'
-    cta_link: '#'
+  - title: marketing
+    description: Learn how social media and marketing funnels can increase your brand's sphere of influence.
+    cta_link: /
   
-  - title: 'deployment'
-    cta_link: '#'
-    description: 'A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am alone, and feel the charm.'
+  - title: deployment
+    cta_link: /
+    description: Learn how our continuous deployment cycle ensures your site's availability and security. 
   
-  - title: 'support'
-    description: 'Caerphilly serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am alone, and feel the charm.'
-    cta_link: '#'
+  - title: support
+    description: Learn how we build relationships with our clients to actively measure success.
+    cta_link: /
 
 pricing:
-  - title: 'Personal'
-    subtitle: 'A beautiful, simple website'
-    description: 'Create a cool stunning website'
-    cta_link: '#'
+  - title: Starter
+    subtitle: An elegant cutting edge website
+    description: Display your brand's content to nurture your influence
+    cta_link: /
     price:
       monthly:
-        cost: 39
+        cost: 50
       annually:
         cost: 500
     features:
-      - name: 'Responsive'
+      - name: Responsive Web Application
         included: true
-      - name: 'Live streaming'
-        included: false
-      - name: 'Adaptive bitrate'
-        included: false
+      - name: Search Engine Optimization
+        included: true
+      - name: Content Management System
+        included: true
+      - name: Lead Generation
+        included: true
+      - name: Email Remarketing
+        included: true
+      - name: Traffic Analytics
+        included: true
+      - name: Monthly Consultation
+        included: true
+      - name: Hosting + SSL certificates
+        included: true
+      - name: Domain Name Management
+        included: true
 
-  - title: 'Team'
-    subtitle: 'A beautiful, simple website'
-    description: 'Create a cool stunning website'
-    cta_link: '#'
+  - title: Social
+    subtitle: A social media market funnel
+    description: Drive traffic towards your content to convert your audience
+    cta_link: /
     price:
       monthly:
-        cost: 69
+        cost: 90
       annually:
-        cost: 800
+        cost: 900
     features:
-      - name: 'Responsive'
+      - name: Facebook and Instagram campaigns
         included: true
-      - name: 'Live streaming'
+      - name: Weekly AB Design Testing
         included: true
-      - name: 'Adaptive bitrate'
-        included: false
+      - name: Landing Pages
+        included: true
   
-  - title: 'Corporate'
-    subtitle: 'A beautiful, simple website'
-    description: 'Create a cool stunning website'
-    cta_link: '#'
-    price:
-      monthly:
-        cost: 96
-      annually:
-        cost: 1000
-    features:
-      - name: 'Responsive'
-        included: true
-      - name: 'Live streaming'
-        included: true
-      - name: 'Adaptive bitrate'
-        included: true
+#  - title: Eccommerce
+#    subtitle: A beautiful, simple website
+#    description: Create a cool stunning website
+#    cta_link: /
+#    price:
+#      monthly:
+#        cost: 96
+#      annually:
+#        cost: 1000
+#    features:
+#      - name: Responsive
+#        included: true
+#      - name: Live streaming
+#        included: true
+#      - name: Adaptive bitrate
+#        included: true

@@ -1,7 +1,15 @@
+@import "../styles/theme";
 @import "../styles/mixins";
 
 #home{
     &__section{
+        &--hero{
+            .hero__content{
+                &--title, &--subtitle{
+                    color: palette('mono', 'white');
+                }
+            }
+        }
         &--solutions{
             @include desktop{
                 flex-direction: row;

@@ -29,13 +29,12 @@ const IndexPage = () => (
     navPlacement="sticky"
   >
     <SEO title="Home" />
-    <Section>{/* Fullscreen Hero */}
+    <Section id="home__section--hero">{/* Fullscreen Hero */}
       <Hero
-        bgImage="https://cdn.stocksnap.io/img-thumbs/960w/L7SIUD5VN5.jpg"//"https://cdn.stocksnap.io/img-thumbs/960w/A0DYKMDRAL.jpg"
+        bgImage="https://cdn.stocksnap.io/img-thumbs/960w/FXUKMM5OVS.jpg"
         subtitle="We are the web dev agency"
         title="Grow your digital business today"
         alignTitle="right"
-        textColor="#fffafa"
         invertTitlePlacement
         fullscreen
       >
