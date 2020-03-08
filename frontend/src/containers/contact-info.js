@@ -6,18 +6,24 @@ import "./contact-info.scss"
 const GET_CONTACT_INFO = graphql`
     query GetContactInfo{
         contentYaml{
-            contact{
-                title
-                phone
-                email
-                location
+            home{
+                contact{
+                    title
+                    phone
+                    email
+                    location
+                }
             }
         }
     }
 `
 
 const ContactInfo = () => {
-    const { contentYaml : { contact } } = useStaticQuery(GET_CONTACT_INFO)
+    const { 
+        contentYaml : { 
+            home: { contact } 
+        } 
+    } = useStaticQuery(GET_CONTACT_INFO)
     return (
         <article className="contact__info--container">
             <h3 className="contact__info--title">

@@ -6,10 +6,12 @@ import { Tabulation } from "../components/ui"
 const LIST_SOLUTIONS = graphql`
     query ListSolutions{
         contentYaml{
-            solutions{
-                title
-                description
-                cta_link
+            home{
+                solutions{
+                    title
+                    description
+                    cta_link
+                }
             }
         }
     }
@@ -17,7 +19,11 @@ const LIST_SOLUTIONS = graphql`
 
 
 const Solutions = () => {
-    const { contentYaml: { solutions } } = useStaticQuery(LIST_SOLUTIONS)
+    const { 
+        contentYaml: { 
+            home: { solutions } 
+        } 
+    } = useStaticQuery(LIST_SOLUTIONS)
     return (
             <Tabulation
                 cta="Read more"

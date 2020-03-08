@@ -6,17 +6,23 @@ import "./services.scss"
 const LIST_SERVICES = graphql`
     query ListServices{
         contentYaml{
-            services{
-                title
-                description
-                icon
+            home{
+                services{
+                    title
+                    description
+                    icon
+                }
             }
         }
     }
 `
 
 const Services = () => {
-    const { contentYaml: { services } } = useStaticQuery(LIST_SERVICES)
+    const { 
+        contentYaml: { 
+            home: { services } 
+        } 
+    } = useStaticQuery(LIST_SERVICES)
     return(
         <div className="services__container">
             <div className="services__content">

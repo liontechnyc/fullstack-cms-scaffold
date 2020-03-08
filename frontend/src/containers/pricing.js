@@ -8,18 +8,20 @@ import "./pricing.scss"
 const LIST_PRICING = graphql`
     query ListPricing{
         contentYaml{
-            pricing{
-                title
-                subtitle
-                description
-                cta_link
-                price{
-                    monthly{ cost }
-                    annually { cost }
-                }
-                features{
-                    name
-                    included
+            home{
+                pricing{
+                    title
+                    subtitle
+                    description
+                    cta_link
+                    price{
+                        monthly{ cost }
+                        annually { cost }
+                    }
+                    features{
+                        name
+                        included
+                    }
                 }
             }
         }
@@ -27,7 +29,11 @@ const LIST_PRICING = graphql`
 `
 
 const Pricing = () => {
-    const { contentYaml: { pricing } } = useStaticQuery(LIST_PRICING)
+    const { 
+        contentYaml: { 
+            home: { pricing } 
+        } 
+    } = useStaticQuery(LIST_PRICING)
     
     return (
         <div className="pricing__container">
