@@ -6,13 +6,14 @@ import flow from "lodash/flow"
 import { 
   withApolloClient, 
   withScrollToTop,
+  withNotifications,
   withCookiesAlert
 } from "../../lib/ui"
 
 import { 
   containerLayoutType,
   navJustificationType
- } from "../../lib/propTypes"
+} from "../../lib/propTypes"
 
 import useSiteMenu from "../../hooks/use-site-menu"
 import useSiteMetadata from "../../hooks/use-site-metadata"
@@ -52,7 +53,7 @@ const Page = ({
   const pageLayoutClass = cx("page__layout", { 
     "is-vertical" : pageLayout === 'vertical',
     "is-horizontal" : pageLayout === 'horizontal'
-   })
+  })
   const navigationClass = cx("page__navigation", {
     "is-fixed" : navPlacement === 'fixed',
     "is-sticky" : navPlacement === 'sticky',
@@ -124,4 +125,9 @@ Page.defaultProps = {
   fluidNav: true
 }
 
-export default flow(withApolloClient, withScrollToTop, withCookiesAlert)(Page)
+export default flow(
+  withApolloClient, 
+  withScrollToTop,
+  withNotifications, 
+  withCookiesAlert
+)(Page)
