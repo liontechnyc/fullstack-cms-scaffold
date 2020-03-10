@@ -23,6 +23,7 @@
                 padding:  0 1em 0 1em;
                 transition: 1s ease-in-out;
                 font-weight: 600;
+                cursor: pointer;
                 &.is-active{
                     color: $fontColor;
                     font-weight: 800;
