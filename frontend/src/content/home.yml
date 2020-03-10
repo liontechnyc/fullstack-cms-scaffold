@@ -6,15 +6,15 @@ contact:
 
 services:
   - title: Providing Shared Values
-    description: Capitalize on low hanging fruit to identify a ballpark added activity to beta test.
+    description: We our passionate about your success, and are committed to providing value to your business. When you succeed we succeed!
     icon: https://colabrio.ams3.cdn.digitaloceanspaces.com/norebro_landing/demo16/2017/08/dm16__image_01-min.png
 
   - title: Cutting Edge App Dev
-    description: Podcasting operational change management inside of flows to establish a framework.
+    description: Our software deployment cycle is built from development to production to ensure high availability and fault tolerance across our apps.
     icon: https://colabrio.ams3.cdn.digitaloceanspaces.com/norebro_landing/demo16/2017/08/dm16__image_02-min.png
   
   - title: Growing Your Business
-    description: We actively communicate with you. With monthly consultation we ensure the success of your marketing goals.
+    description: We actively communicate with you. Our monthly consultations ensure the success of your marketing goals.
     icon: https://colabrio.ams3.cdn.digitaloceanspaces.com/norebro_landing/demo16/2017/08/dm16__image_03-min.png
 
 solutions:
@@ -80,20 +80,3 @@ pricing:
         included: true
       - name: Landing Pages
         included: true
-  
-#  - title: Eccommerce
-#    subtitle: A beautiful, simple website
-#    description: Create a cool stunning website
-#    cta_link: /
-#    price:
-#      monthly:
-#        cost: 96
-#      annually:
-#        cost: 1000
-#    features:
-#      - name: Responsive
-#        included: true
-#      - name: Live streaming
-#        included: true
-#      - name: Adaptive bitrate
-#        included: true
