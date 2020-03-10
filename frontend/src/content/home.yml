@@ -38,7 +38,7 @@ pricing:
   - title: Starter
     subtitle: An elegant cutting edge website
     description: Display your brand's content to nurture your influence
-    cta_link: /
+    cta_link: https://calendly.com/liontechnyc/starter-package-consultation
     price:
       monthly:
         cost: 50
@@ -51,13 +51,7 @@ pricing:
         included: true
       - name: Content Management System
         included: true
-      - name: Lead Generation
-        included: true
-      - name: Email Remarketing
-        included: true
-      - name: Traffic Analytics
-        included: true
-      - name: Monthly Consultation
+      - name: Email Re-Marketing
         included: true
       - name: Hosting + SSL certificates
         included: true
@@ -67,16 +61,22 @@ pricing:
   - title: Social
     subtitle: A social media market funnel
     description: Drive traffic towards your content to convert your audience
-    cta_link: /
+    cta_link: https://calendly.com/liontechnyc/starter-package-consultation
     price:
       monthly:
         cost: 90
       annually:
         cost: 900
     features:
-      - name: Facebook and Instagram campaigns
+      - name: Facebook and Instagram Marketing
         included: true
       - name: Weekly AB Design Testing
         included: true
       - name: Landing Pages
+        included: true
+      - name: Event Marketing Automation
+        included: true
+      - name: Messenger Chatbot Integrations
+        included: true
+      - name: Personalized Content Creation
         included: true
