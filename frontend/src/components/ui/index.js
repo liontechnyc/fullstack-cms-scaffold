@@ -1,6 +1,6 @@
 
 import "../../styles/core.scss"
-import "./ui.scss"
+import "./index.scss"
 
 export { default as Page } from "./page"
 export { default as Section } from "./section"

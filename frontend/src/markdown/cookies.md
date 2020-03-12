@@ -1,6 +1,6 @@
 ---
 path: "/cookies"
-title: "Coookie Consent Policy"
+title: "Cookie Consent Policy"
 template: "policyTemplate"
 ---
 

@@ -4,10 +4,9 @@ const templates = {
   policyTemplate : path.resolve(`src/templates/policyTemplate.js`)
 }
 
-exports.createPages = async ({ actions, graphql, reporter }) => {
-  const { createPage } = actions
+async function generateMarkdownTemplates({ actions, graphql, reporter }){
 
-  const result = await graphql(`
+  const query = await graphql(`
     {
       allMarkdownRemark{
         edges {
@@ -23,16 +22,20 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   `)
 
   // Handle errors
-  if (result.errors) {
+  if (query.errors) {
     reporter.panicOnBuild(`Error while running GraphQL query.`)
     return
   }
 
-  result.data.allMarkdownRemark.edges.forEach(({ node }) => {
-    createPage({
+  query.data.allMarkdownRemark.edges.forEach(({ node }) => {
+    actions.createPage({
       path: node.frontmatter.path,
-      component: templates[node.frontmatter.template],
-      context: { }, // additional data can be passed via context
+      component: templates[ node.frontmatter.template ],
+      context: { }
     })
   })
+}
+
+exports.createPages = async ({ actions, graphql, reporter }) => {
+  await generateMarkdownTemplates({ actions, graphql, reporter })
 }

@@ -3,8 +3,7 @@ import PropTypes from "prop-types"
 import cx from "classnames"
 import flow from "lodash/flow"
 
-import { 
-  withApolloClient, 
+import {
   withScrollToTop,
   withNotifications,
   withCookiesAlert
@@ -125,8 +124,7 @@ Page.defaultProps = {
   fluidNav: true
 }
 
-export default flow(
-  withApolloClient, 
+export default flow( 
   withScrollToTop,
   withNotifications, 
   withCookiesAlert

@@ -1,13 +1,10 @@
 import React from "react"
 import { Link } from "gatsby"
-import { ApolloProvider } from "@apollo/react-hooks"
 import { ModalRoutingContext } from "gatsby-plugin-modal-routing"
 import { ToastContainer } from "react-toastify"
 import cx from "classnames"
 
-import client from "./apollo/client"
 import useScrollToTop from "../hooks/use-scroll-to-top"
-import "../hooks/use-cookie-consent"
 import useCookieConsent from "../hooks/use-cookie-consent"
 
 /**
@@ -20,18 +17,6 @@ export const asModal = Component => props => {
         <ModalRoutingContext.Consumer>
             {(modalProps) => <Component {...modalProps} {...props}/>}
         </ModalRoutingContext.Consumer>
-    )
-}
-
-/**
- * ? HOC to wrap component with Apollo Provider w/ client credentials
- *  
- */
-export const withApolloClient = Component => props => {
-    return(
-        <ApolloProvider client={client}>
-            <Component {...props}/>
-        </ApolloProvider>
     )
 }
 
