@@ -1,6 +1,7 @@
 ---
 path: "/privacy"
 title: "Privacy Policy"
+template: "policyTemplate"
 ---
 
 # Privacy Policy

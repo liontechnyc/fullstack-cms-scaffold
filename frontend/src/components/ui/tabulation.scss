@@ -16,12 +16,14 @@
             border-bottom: 1px solid rgba(#000, 0.15);
             overflow: auto;
             margin-bottom: -1px;
+            scroll-behavior: smooth;
             h4{
                 color: rgba($fontColor, 0.8);
                 text-transform: capitalize;
                 padding:  0 1em 0 1em;
                 transition: 1s ease-in-out;
                 font-weight: 600;
+                cursor: pointer;
                 &.is-active{
                     color: $fontColor;
                     font-weight: 800;

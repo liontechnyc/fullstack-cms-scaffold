@@ -1,9 +1,11 @@
 const path = require(`path`)
 
+const templates = {
+  policyTemplate : path.resolve(`src/templates/policyTemplate.js`)
+}
+
 exports.createPages = async ({ actions, graphql, reporter }) => {
   const { createPage } = actions
-
-  const policyTemplate = path.resolve(`src/templates/policyTemplate.js`)
 
   const result = await graphql(`
     {
@@ -12,6 +14,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
           node {
             frontmatter {
               path
+              template
             }
           }
         }
@@ -28,7 +31,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   result.data.allMarkdownRemark.edges.forEach(({ node }) => {
     createPage({
       path: node.frontmatter.path,
-      component: policyTemplate,
+      component: templates[node.frontmatter.template],
       context: { }, // additional data can be passed via context
     })
   })

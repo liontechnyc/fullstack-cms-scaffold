@@ -1,3 +1,4 @@
 {
-  "myCustomConfiguration": "This configuration is accessible through strapi.config.environments.development.myCustomConfiguration"
+  "MAILCHIMP_API_KEY": "8e2b9374537b2354c1909e7a539ed3f5-us19",
+  "MAILCHIMP_AUDIENCE": "4430f33068"
 }

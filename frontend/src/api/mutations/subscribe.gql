@@ -1,0 +1,9 @@
+
+mutation addNewSubscriber($email: String!){
+  createSubscriber(input:{ data:{email: $email} }){
+    subscriber{
+      id
+      email
+    }
+  }
+}

@@ -5,18 +5,17 @@ import { Page, Section, SEO } from "../components/ui"
 
 import "./policy-template.scss"
 
-export default ({ data: {
-    markdownRemark: { html, frontmatter: { title } }, 
-  } 
-  }) => {
+export default function Template({ data }){
+    const { markdownRemark: page } = data
+    window.scrollTo(0, 0)
     return(
         <Page navPlacement="sticky" contentSpacing="fluid">
-            <SEO title={title}/>
+            <SEO title={page.frontmatter.title}/>
             <Section bgColor="#fffafa">
               <div className="policy__container">
                 <div
-                className="policy__container--content"
-                dangerouslySetInnerHTML={{ __html: html }}
+                className="policy__container--content animated fadeIn"
+                dangerouslySetInnerHTML={{ __html: page.html }}
                 />
               </div>
             </Section>
@@ -25,10 +24,11 @@ export default ({ data: {
 }
 
 export const pageQuery = graphql`
-  query{
-    markdownRemark{
+  query PostByPath($path: String!){
+    markdownRemark(frontmatter: { path: { eq: $path } }){
       html
       frontmatter{
+          path
           title
       }
     }

@@ -51,12 +51,13 @@ const Tabulation = ({ cta, ctaIcon, items }) => {
     const [ activeTab, setActiveTab ] = useState(0)
 
     useEffect(() => {
+        const tabsContainer = document.querySelector('.tabulation__panel--tabs')
         const selectionBar = document.querySelector('.tabulation__panel--selection-bar')
         const activeItem = document.querySelector('.tabulation__panel--tabs > .is-active')
 
         selectionBar.style.width = `${ activeItem.clientWidth }px`
         selectionBar.style.transform = `translateX(${ activeItem.offsetLeft }px)`
-
+        tabsContainer.scrollLeft = activeItem.offsetLeft
     })
 
     return(

@@ -2,6 +2,7 @@ import React from "react"
 import { Link } from "gatsby"
 import { ApolloProvider } from "@apollo/react-hooks"
 import { ModalRoutingContext } from "gatsby-plugin-modal-routing"
+import { ToastContainer } from "react-toastify"
 import cx from "classnames"
 
 import client from "./apollo/client"
@@ -65,6 +66,22 @@ export const withScrollToTop = Component => props => {
     )
 }
 
+/**
+ * ? HOC to wrap Toast container 
+ */
+export const withNotifications = Component => props => {
+    require('react-toastify/dist/ReactToastify.css')
+    return(
+        <>
+            <Component {...props}/>
+            <ToastContainer/>
+        </>
+    )
+}
+
+/**
+ * ? HOC to wrap cookies consent alert 
+ */
 export const withCookiesAlert = Component => props => {
     const { hasConsent, setConsent } = useCookieConsent()
     const containerClass = cx("cookies__alert", "animated", {

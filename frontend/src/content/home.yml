@@ -1,14 +1,26 @@
-home:
-  contact:
-    title: LionTechNYC
-    phone: +1 347 766 2999
-    email: info@liontech.nyc
-    location: Brooklyn, NY
+contact:
+  title: LionTechNYC
+  phone: +1 347 766 2999
+  email: info@liontech.nyc
+  location: Brooklyn, NY
+
+services:
+  - title: Providing Shared Values
+    description: We our passionate about your success, and are committed to providing value to your business. When you succeed we succeed!
+    icon: https://colabrio.ams3.cdn.digitaloceanspaces.com/norebro_landing/demo16/2017/08/dm16__image_01-min.png
+
+  - title: Cutting Edge App Dev
+    description: Our software deployment cycle is built from development to production to ensure high availability and fault tolerance across our apps.
+    icon: https://colabrio.ams3.cdn.digitaloceanspaces.com/norebro_landing/demo16/2017/08/dm16__image_02-min.png
   
-  services:
-    - title: Providing Shared Values
-      description: Capitalize on low hanging fruit to identify a ballpark added activity to beta test.
-      icon: https://colabrio.ams3.cdn.digitaloceanspaces.com/norebro_landing/demo16/2017/08/dm16__image_01-min.png
+  - title: Growing Your Business
+    description: We actively communicate with you. Our monthly consultations ensure the success of your marketing goals.
+    icon: https://colabrio.ams3.cdn.digitaloceanspaces.com/norebro_landing/demo16/2017/08/dm16__image_03-min.png
+
+solutions:
+  - title: web development
+    description: Learn how we craft our sites to exactly meet your brand's marketing goals.
+    cta_link: /  
   
     - title: Cutting Edge App Dev
       description: Podcasting operational change management inside of flows to establish a framework.
@@ -35,6 +47,7 @@ home:
       description: Learn how we build relationships with our clients to actively measure success.
       cta_link: /
   
+<<<<<<< HEAD
   pricing:
     - title: Starter
       subtitle: An elegant cutting edge website
@@ -82,3 +95,55 @@ home:
         - name: Landing Pages
           included: true
   
+=======
+  - title: support
+    description: Learn how we build relationships with our clients to actively measure success.
+    cta_link: /
+
+pricing:
+  - title: Starter
+    subtitle: An elegant cutting edge website
+    description: Display your brand's content to nurture your influence
+    cta_link: https://calendly.com/liontechnyc/starter-package-consultation
+    price:
+      monthly:
+        cost: 50
+      annually:
+        cost: 500
+    features:
+      - name: Responsive Web Application
+        included: true
+      - name: Search Engine Optimization
+        included: true
+      - name: Content Management System
+        included: true
+      - name: Email Re-Marketing
+        included: true
+      - name: Hosting + SSL certificates
+        included: true
+      - name: Domain Name Management
+        included: true
+
+  - title: Social
+    subtitle: A social media market funnel
+    description: Drive traffic towards your content to convert your audience
+    cta_link: https://calendly.com/liontechnyc/starter-package-consultation
+    price:
+      monthly:
+        cost: 90
+      annually:
+        cost: 900
+    features:
+      - name: Facebook and Instagram Marketing
+        included: true
+      - name: Weekly AB Design Testing
+        included: true
+      - name: Landing Pages
+        included: true
+      - name: Event Marketing Automation
+        included: true
+      - name: Messenger Chatbot Integrations
+        included: true
+      - name: Personalized Content Creation
+        included: true
+>>>>>>> 0399bc579c11fb2a6277894225838cd009ea55d4
